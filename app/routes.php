@@ -11,32 +11,28 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+Route::get('/', 'HomeController@showWelcome');
+Route::get('/resume', 'HomeController@showResume');
 
-Route::get('/resume', function() {
-	return "This is my resume";
-});
+// Route::get('/', function()
+// {
+// 	return View::make('hello');
+// });
 
-Route::get('/portfolio', function() {
-	return "This is my portfolio";
-});
+Route::get('/', 'HomeController@showResume');
+
+Route::get('/ ', 'HomeController@showPortfolio');
 
 Route::get('/sayhello/{name}', function($name) 
 {
 	$data = array(
 		'name' => $name
 	);
-
 	return View::make('my-first-view')->with($data);
 });
 
-
 Route::get('/rolldice/{guess}', function($guess) {
 	
-
 	$roll = mt_rand(1, 6);
 
 	if ($guess == $roll) {
@@ -52,8 +48,6 @@ Route::get('/rolldice/{guess}', function($guess) {
 		'roll' => $roll
 	);
 	return View::make('roll-dice')->with($data);
-
-
 });
 
 
