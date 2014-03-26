@@ -5,7 +5,8 @@ class PostsController extends \BaseController {
 
 	public function index()
 	{
-		return "Show's a list of all posts";
+		$posts = Post::all();
+		return View::make('posts.index')->with('posts', $posts);
 	}
 
 
@@ -16,15 +17,20 @@ class PostsController extends \BaseController {
 
 
 	public function store()
-	{
-		Log::info({{ Input::all() }});
-		return Redirect::back()->withInput();
+	{	
+		Log::info(Input::all());
+	 	$post = new Post();
+		$post->title = Input::get('title');
+		$post->body = Input::get('body');
+		$post->save();
+		return Redirect::action('PostsController@index');
 	}
 
 
 	public function show($id)
 	{
-		return "Show a specific post";
+		$posts = Post::findOrFail($id);
+		return View::make('posts.show')->with('posts', $posts);
 	}
 
 	
