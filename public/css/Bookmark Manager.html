@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<!-- saved from url=(0065)chrome-extension://eemcgdkfndhakfknompkggombfjjjeno/main.html#861 -->
+<html i18n-values="dir:textdirection" dir="ltr"><!--
+
+Copyright (c) 2012 The Chromium Authors. All rights reserved.
+Use of this source code is governed by a BSD-style license that can be
+found in the LICENSE file.
+
+--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="google" value="notranslate">
+<meta charset="utf-8">
+<title i18n-content="title">Bookmark Manager</title>
+
+<link rel="stylesheet" href="chrome://resources/css/list.css">
+<link rel="stylesheet" href="chrome://resources/css/tree.css">
+<link rel="stylesheet" href="chrome://resources/css/menu.css">
+<link rel="stylesheet" href="chrome://resources/css/menu_button.css">
+<link rel="stylesheet" href="chrome://resources/css/widgets.css">
+<style>/* Copyright (c) 2012 The Chromium Authors. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be
+ * found in the LICENSE file. */
+
+html,
+body {
+  cursor: default;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+body {
+  -webkit-flex-direction: column;
+  display: -webkit-flex;
+}
+
+list {
+  display: block;
+  overflow-x: hidden;
+  overflow-y: visible; /* let the container do the scrolling */
+}
+
+list > * {
+  -webkit-padding-end: 20px;
+  -webkit-padding-start: 3px;
+  color: hsl(0, 0%, 70%);
+  display: -webkit-flex;
+  line-height: 20px;
+  margin: 0;
+  overflow: visible;
+  padding-bottom: 0;
+  padding-top: 0;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+list > * > * {
+  -webkit-padding-start: 20px;
+  background: 0 50% no-repeat;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: pre; /* Don't collapse whitespace */
+}
+
+list > * > .label {
+  -webkit-transition: all 150ms;
+  color: black;
+  display: inline-block; /* We need to use inline-block here due to RTL. */
+}
+
+list > * > .url {
+  -webkit-flex: 1;
+  direction: ltr; /* URLs always read LTR */
+  display: none;
+  /* TODO(arv): Remove min-width once bug is fixed:
+   * https://bugs.webkit.org/show_bug.cgi?id=111790 */
+  min-width: 0;
+}
+
+list > :hover > .url,
+list > [selected] > .url {
+  display: block;
+}
+
+/* Handle proper padding for URL field in an RTL context, where field order is
+ * |div.url||div.label| - so we need padding at the right of URL, not at the
+ * left. And since url is always LTR, that is padding at the end, not the start.
+ */
+html[dir=rtl] .url {
+  -webkit-padding-end: 20px;
+  -webkit-padding-start: 0;
+}
+
+html[dir=rtl] list .label {
+  background-position: 100% 50%;
+}
+
+list > .folder > .label {
+  background-image: -webkit-image-set(
+      url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAASCAYAAAC5DOVpAAABLElEQVR4Xs2Ur0oEURhHz10UwQkmg6DNZvQFDAafYsHiGgwGg8lg1S5jEcEiNvEBLPZFQbC5yWCSdZf5ez/5wQUHlpW7sqAHPhi+4R4OA3ecmTEtWkyRGYDj7Y0dIGWUztHF/flEMon2DvcRSZIgXl+euL66TYF4maoWV1bpPT4gnPOIls9YXlpQtSEiqlWW7h60wQAMMwQYrG0Gj4V9eFm89zg9uVS1xjVlmBnOV4DhzIPG+/Bc43wddjUif3v+4Zt5QLKGCEmqofZhJKwZT7OsLiVSBTQlEoQy8s8IWS1ZARKVA7AgUiGqNMj6ABEyHaoKKPvfNRJoMMgHBOLKUFmVAUESkOjvrtNH9475uVliGeblWFnn7KabMiHrW21GMDPs99AclQn37/5nX4eJ9e7eNnr7AAAAAElFTkSuQmCC') 1x,
+      url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAkCAYAAADl9UilAAACyUlEQVR4Xu2YMWsVQRRGzz4MWIiEVCE2QRGL/ABBND4klUQJNhY2prBIJVgIFmm08Cc8rGwUE0sLK8WgtaXYSIqkVCsRTbJzP2EZcmHW2dkHQURzYRneTHEP5+43D7aSxN9YA+CfADsEO4IXD5aHl4EVYJHx6h0wuvfw7jNkSGJi5srBgQEr12/dWDw9d8Z3JEBIAin5bSCxtbl94cmjp8isAUN2sMaAc1NTx/j29TORCiQHlBAOqAg5dfwowPmJmUUOqqr7Ny9ei+NbAFi6ehara8atFy/fM2ZtAKPVxxvPc8ZWlu/cXjhx8hS4mWiL1hiFgYjGbN/q3PwSYEjyMwnke5UJMCzssv3pw3Bt7RVAFuzSzOwshB+gXYcggoikgYGEzBwgAsqMKoJg5nBmIMPiqnqH6ckBwHxXKgcVgGpktZtxiAiUgCgBkeEwhiza2t/3VfXPBg4YdIEhBGYJSMtSbOJwVYRzAIds9n1t71kop9INdFlyA1WEkwPA7yAzFrEalcFIRmSJsZIlIRXsSMghGygLe2UwXHHZkgM5QGrJgTKwAczKYNA25qCiajVW4R1SJ2yzZ3URzEdiIWOpkDQ/z8F6j7GMRYCcpXLS1AFrkCY1RLh+xkKE8gblpKXnqSU5pCfXexXBzJqnslBI2ngjbSfX7fYb5b6xkLXkQP2vBVpW5b2kfmCVGZZJWjdsX0u+RtAymI8jjHMtZMauDjiHtz6jjBFuHnxkPZNWtJT7NymCeVLydtKklS05UGLMAfu8Yw5XSFoCmcKlUFljknq+Y80TSknLgsgKlvAzEKjXKINfF0kSx7OkrDFIRglFMCPsDhR2oN7BpDSl6X3klkIKEdqWoGVJ9V5kw7rA3m5tfhxOT06gve+gOja05MINbskMi0AI3FJqRVGWSGvrSw3wpgtstL7enA/5s/UaGJGp//Yz1CHYIdgvt4ZhcVqlZYwAAAAASUVORK5CYII=') 2x);
+}
+
+/* We need to ensure that even empty labels take up space */
+list > * > .label:empty::after,
+list > * > .url:empty::after {
+  content: ' ';
+  white-space: pre;
+}
+
+list > .folder > .url:empty::after {
+  content: '';
+}
+
+list > * > button {
+  -webkit-transition: opacity 150ms;
+  background: #fff -webkit-canvas(drop-down-arrow) no-repeat center center;
+  border: 1px solid hsl(214, 91%, 85%);
+  border-radius: 3px;
+  bottom: 1px;
+  display: none;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  right: 3px;
+  top: 1px;
+  width: 15px;
+}
+
+list > [selected]:hover > button,
+list > * > button[menu-shown] {
+  border-color: hsl(214, 91%, 65%);
+}
+
+list > :hover > button {
+  display: block;
+}
+
+list > * > button:hover,
+list > * > button[menu-shown] {
+  display: block;
+}
+
+html[dir=rtl] list > * > button {
+  left: 3px;
+  right: auto;
+}
+
+/* Edit mode */
+
+list [editing] .label input,
+list [editing] .url input {
+  -webkit-margin-end: 4px;
+  -webkit-margin-start: -4px;
+  -webkit-padding-end: 3px;
+  -webkit-padding-start: 3px;
+  box-sizing: content-box;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  /* Do not inherit the line-height. */
+  line-height: normal;
+  margin-bottom: 0;
+  margin-top: 0;
+  min-height: 0;
+  text-decoration: none;
+  vertical-align: baseline;
+}
+
+.tree-item [editing] input {
+  line-height: normal;
+  margin: 0;
+  min-height: 0;
+  padding: 1px 0;
+}
+
+list .label input,
+list .url input {
+  outline: none;
+}
+
+list > [editing] {
+  overflow: visible;
+}
+
+list [editing] .label,
+list [editing] .url,
+list [editing] > * {
+  overflow: visible;
+}
+
+list [editing] .url {
+  -webkit-padding-start: 5px;
+}
+
+list [editing] input {
+  padding: 1px 0;
+}
+
+/* end editing */
+
+html[dir=rtl] list > .folder > .label {
+  background-image: -webkit-image-set(
+      url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAASCAYAAAC5DOVpAAABRUlEQVR4Xs2UPUvEQBCG39mLnvhZXSEoWghWguAfsNPK1kYUG6+00fYKbSwtBLlrBFv/hKWVpVaWYiESReJdNNlxdhIRwkLIcYhDhmcHss/skuwSM2NQYTDACKoIjnZX9wRtj6fZurjuVJI50ebWBuYXl7SIokh5dnLqGnSCCt0xMz2F+OUB9zePWjMbZWN2QecVZexwcLiD4cYcNIjco4RCqEOBkrC8Bhzvt9rebfLTHYLJUWiYGkAGrMzGMEapCQKboOQDxKFCBCokN0GSA2liawVhmaz7lrE+DlgDmETFlH6pFCLln1VTvURm01/pyATArnbSXCZSGhrTVTNxhZ+2957JbaISJD3JLhC/Cj/B1lY8AXEkYIBtLs6lqchS/qPj9BFL1+fQIwjhf//WL1tZ38b51SX6iCaYuZB9h3eb9C/us28Uf7F5VS9BsgAAAABJRU5ErkJggg==') 1x,
+      url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAkCAYAAADl9UilAAACPUlEQVR4Xu2YMWsUQRTHf+/tqWCpIHgB8QOIdbYRSz+BFhrBwsLCxloRTKNWBgkHIij4GeztvMLCRrBUiAkYEEGDinfz3OHmcS657E1URsFs89s3Aze/+7/ZY/bEzPgXLy0gsCdWBL2dJrZeroIoograUNTrmaThnZv3l4ArQL1Lj+fA4Pq9W0/mipkFJDIwoTKtdTsJEKWWLp+tF47129IiSOL2e2HtzVr9eOUhgIvxR5/K5Uun7eq1i75gElEskjTmQkR6DSvLq9x49Ey6EvNFfqktb1+/+q0v5m3dUSxKnT93qj56/ARUPY8/ElNBmdSmCgiiPt+mpyaJROBzEQoIJ89ciAXv363XD27fpUusPnwwELY2oNrf+vAoMZ4+EKCKNZRE1GU0UXzeW+vi2M9t130cWegD1F1i2OgL4ftXJO1wSzIWkoTLeZ2I06VdzrrkFADUJugUC2Ow0DBEQkOL9LFWPZt4bdYeN8MS2/fMF8MCIYSycuQkNvbESst1i7lMYTkyEjP7G3JZiZWXI6OVYRwoL0fuHisulyNGebmMPeabsaRcbmJWWM6ynkoXKiTntNzfMSuWnETuopVF5fJbGQrKkZmYBQOsWHL5iYEvWFYO6M3dY6NvBEBEAGacPKt0r0g1Pa36abbNChqaKjrjJGyA2Giu2HD9w2ixf+gTyGcARKX1Pth+TwQaaqXt94MqiiepJI/0CFHOx1ShqtDqABubHwGGXWKDpy82ARYpew2BwX/7N9Se2J7YD/m8Tjk+x0+5AAAAAElFTkSuQmCC') 2x);
+}
+
+list > .folder > .label,
+.tree-label,
+.tree-row[may-have-children] > .tree-label,
+.tree-item[expanded] > .tree-row > .tree-label {
+  background-image: -webkit-image-set(
+      url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABv0lEQVQ4EQXBMa+fYxgH4Ot+3rfHLNWIRcTQgRgamqgm0qF2oxikg9Fg9gHEYupqMFqtGgkRDCImi0GsRETR03P+7/PcP9dVSdT1O2/cuHn7HgD89MO3n+aXrx4AAAAA7HDj5u17777z1tsQFD4BHgAAAADUC2++9+HVp67dufv6a89VAfDlN9/9BqUAwFCgxR+///n1fu3qk7c++uD9WxLAUmNz99VXnjl6kjiaU5asWN16hTrz8f37px3+eviPrAloDN1x9FRhdTllScfqWKuN8YQo+5xzPnw0VR0GFMmyEt3RobMkJYnuiNYz1prH3it9VIy5VJUgIaKbSswmaUF3BBl0y74S8yBzUQUSkmjRHQkR3ZGgkGWls3fa3xfTWS8RFCLo0N1K6URAwBpUd+1tjNPlhZkDBJAQ0R0UCEpAj0urRu1J7/+epq0PpYAQQBILG0AhrbdNkit7wuMLthxiaIyiFwM2gh1BMMJMSdilc7o8d6XPtRIU0hQMggYEhbUjnf3i8fmjLz7/7HuDAQAAAGiABrZa/9XzL7787K8//3jChg0bBgYGBoJGo7Gwnr7+0lklAQAAAAAAAAD/A28FNzXCSzJlAAAAAElFTkSuQmCC') 1x,
+      url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABLElEQVR4XuWXMUoEMRSGv8isdxhFvMGyIHoHC/EAgo2FCtp7AIU9gO1YeAcRLDyANsseQBARrS13J+8XJjjDbpNm4An7EXiQvJCf/+UREiThSUGCi/H9PlABZWbPF3AyHO0+Tiev5Li9Os4LSKgajvZK8pTTyUsFbID6c0BS9vDlXKlXAWRZzu3hfMLZzZ0Atrc2mc3n5IH1wYD3j0/6IJxeVzo/OkSINEBSFwVSQFgTrZ3TQp6py7eFtW5e/MW08PD0TCGJt+8fPJCUBEQzbwHyFVBHRwesESA8sMYBE9FJgKy9AytdAhm1mwP2LxyQnwNdF5hfF5iJ2oQH1rZh9CwBjm8BqQREM+8SyPk5lqeA4HgHgihkYIYLMggHl2PhSAB2cMT9c7oGrLaAXwHjH0xxYp9NAAAAAElFTkSuQmCC') 2x);
+}
+
+.main {
+  -webkit-flex: 1;
+  display: -webkit-flex;
+  /* TODO(arv): Remove min-height once bug is fixed:
+   * https://bugs.webkit.org/show_bug.cgi?id=111790 */
+  min-height: 0;
+}
+
+#tree-container {
+  -webkit-padding-end: 5px;
+  -webkit-padding-start: 10px;
+  box-sizing: border-box;
+  /* min-width and max-width are used by the split pane. */
+  max-width: 50%;
+  min-width: 50px;
+  overflow: auto;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  width: 200px;
+}
+
+#tree {
+  display: inline-block;
+  min-width: 100%;
+  overflow: visible; /* let the container do the scrolling */
+}
+
+.tree-item > .tree-row {
+  line-height: 20px;
+}
+
+.tree-row .expand-icon {
+  top: 2px;
+}
+
+#list {
+  -webkit-flex: 1;
+  -webkit-padding-end: 5px;
+  box-sizing: border-box;
+  /* TODO(arv): Remove min-width once bug is fixed:
+   * https://bugs.webkit.org/show_bug.cgi?id=111790 */
+  min-width: 0;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+.splitter {
+  -webkit-border-end: 15px solid white;
+  -webkit-border-start: 0;
+  background-color: rgb(235, 239, 249);
+  cursor: e-resize;
+  width: 5px;
+cursor: col-resize;
+}
+
+.logo {
+  -webkit-appearance: none;
+  background: -webkit-image-set(url('data:image/png;base64,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') 1x, url('data:image/png;base64,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') 2x) no-repeat 50% 50%;
+  border: 0;
+  cursor: pointer;
+  float: left;
+  height: 32px;
+  margin: 10px;
+  width: 32px;
+}
+
+html:not(.focus-outline-visible) .logo:focus {
+  outline: none;
+}
+
+.header form {
+  float: left;
+  margin: 14px 2px 0 2px;
+  width: 171px;
+}
+
+.header {
+  min-width: 400px;
+}
+
+html[dir=rtl] .logo,
+html[dir=rtl] .header > div,
+html[dir=rtl] .header form {
+  float: right;
+}
+
+.tree-row.drag-on,
+.drag-on {
+  background-color: hsla(214, 91%, 85%, .5);
+  border: 1px solid hsl(214, 91%, 85%);
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+.drag-above::before,
+.drag-below::after {
+  background-clip: padding-box;
+  background-color: black;
+  border: 3px solid black;
+  border-bottom-color: transparent;
+  border-radius: 0;
+  border-top-color: transparent;
+  box-sizing: border-box;
+  content: '';
+  display: block;
+  height: 8px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  z-index: 10;
+}
+
+.drag-above::before {
+  top: calc((8px/2 + 1px) * -1)
+}
+
+.drag-below::after {
+  bottom: calc((8px/2 + 1px) * -1)
+}
+
+list.drag-above::before {
+  top: 0
+}
+
+list > .drag-below,
+list > .drag-above {
+  overflow : visible;
+}
+
+.summary {
+  background-color: rgb(235, 239, 249);
+  border-top: 1px solid rgb(156, 194, 239);
+  clear: both;
+  padding: 5px 10px;
+  white-space: nowrap;
+}
+
+.summary > * {
+  display: inline-block;
+  font-size: 100%;
+  margin: 0;
+}
+
+.summary button {
+  -webkit-appearance: none;
+  -webkit-margin-start: 10px;
+  -webkit-padding-end: 11px;
+  -webkit-padding-start: 0;
+  background: transparent -webkit-canvas(drop-down-arrow)
+              no-repeat right center;
+  border: 0;
+  font: inherit;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+html[dir=rtl] .summary button {
+  background-position: left center;
+}
+
+@media (pointer:coarse) {
+  list > *,
+  menu > button,
+  .tree-item > .tree-row {
+    line-height: 28px;
+  }
+
+  list [editing] input,
+  .tree-item [editing] input {
+    padding: 3px 0;
+  }
+
+  .tree-row .expand-icon {
+    top: 6px;
+  }
+}
+</style>
+
+<script src="chrome://resources/css/tree.css.js"></script>
+<script src="chrome-extension://eemcgdkfndhakfknompkggombfjjjeno/css/bmm.css.js"></script>
+<script src="chrome://resources/js/event_tracker.js"></script>
+
+<script src="chrome://resources/js/cr.js"></script>
+<script src="chrome://resources/js/cr/event_target.js"></script>
+<script src="chrome://resources/js/cr/link_controller.js"></script>
+<script src="chrome://resources/js/cr/promise.js"></script>
+<script src="chrome://resources/js/cr/ui.js"></script>
+<script src="chrome://resources/js/cr/ui/touch_handler.js"></script>
+<script src="chrome://resources/js/cr/ui/array_data_model.js"></script>
+<script src="chrome://resources/js/cr/ui/command.js"></script>
+<script src="chrome://resources/js/cr/ui/focus_outline_manager.js"></script>
+<script src="chrome://resources/js/cr/ui/menu_item.js"></script>
+<script src="chrome://resources/js/cr/ui/menu.js"></script>
+<script src="chrome://resources/js/cr/ui/position_util.js"></script>
+<script src="chrome://resources/js/cr/ui/menu_button.js"></script>
+<script src="chrome://resources/js/cr/ui/context_menu_button.js"></script>
+<script src="chrome://resources/js/cr/ui/context_menu_handler.js"></script>
+<script src="chrome://resources/js/cr/ui/list_selection_model.js"></script>
+<script src="chrome://resources/js/cr/ui/list_selection_controller.js"></script>
+<script src="chrome://resources/js/cr/ui/list_item.js"></script>
+<script src="chrome://resources/js/cr/ui/list.js"></script>
+<script src="chrome://resources/js/cr/ui/tree.js"></script>
+<script src="chrome://resources/js/cr/ui/splitter.js"></script>
+
+<script src="chrome://resources/js/i18n_template_no_process.js"></script>
+<script src="chrome://resources/js/load_time_data.js"></script>
+<script src="chrome://resources/js/util.js"></script>
+
+<script src="chrome-extension://eemcgdkfndhakfknompkggombfjjjeno/js/bmm.js"></script>
+<script src="chrome-extension://eemcgdkfndhakfknompkggombfjjjeno/js/bmm/bookmark_list.js"></script>
+<script src="chrome-extension://eemcgdkfndhakfknompkggombfjjjeno/js/bmm/bookmark_tree.js"></script>
+<script src="chrome-extension://eemcgdkfndhakfknompkggombfjjjeno/js/dnd.js"></script>
+</head>
+<body i18n-values=".style.fontFamily:fontfamily;.style.fontSize:fontsize" style="font-family: &#39;Lucida Grande&#39;, sans-serif; font-size: 75%;">
+
+<div class="header">
+  <button class="logo link-button" tabindex="3"></button>
+  <form class="form">
+    <input type="search" id="term" tabindex="1" autofocus="" incremental="" i18n-values="placeholder:search_button" placeholder="Search bookmarks">
+  </form>
+</div>
+
+<div class="summary">
+  <h3 i18n-content="title">Bookmark Manager</h3>
+  <button menu="#organize-menu" tabindex="4" i18n-content="organize_menu" class="custom-appearance menu-button">Organize</button>
+</div>
+
+<div class="main">
+  <div id="tree-container">
+    <tree id="tree" tabindex="2" role="tree" contextmenu="#context-menu"><div class="tree-item" role="treeitem" draggable="false" has-children="true" may-have-children="" expanded=""><div class="tree-row" has-children="true" may-have-children="" style="-webkit-padding-start: 0px;"><span class="expand-icon"></span><span class="tree-label">Bookmarks Bar</span></div><div class="tree-children" expanded=""><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 20px;"><span class="expand-icon"></span><span class="tree-label">Stuff</span></div><div class="tree-children"></div></div><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 20px;"><span class="expand-icon"></span><span class="tree-label">DPhins</span></div><div class="tree-children"></div></div><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 20px;"><span class="expand-icon"></span><span class="tree-label">MyHTML</span></div><div class="tree-children"></div></div><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 20px;"><span class="expand-icon"></span><span class="tree-label">Code</span></div><div class="tree-children"></div></div><div class="tree-item" role="treeitem" draggable="true" selected=""><div class="tree-row" selected="" style="-webkit-padding-start: 20px;"><span class="expand-icon"></span><span class="tree-label">HTML/</span></div><div class="tree-children"></div></div><div class="tree-item" role="treeitem" draggable="true" has-children="false" may-have-children="" expanded=""><div class="tree-row" has-children="false" may-have-children="" style="-webkit-padding-start: 20px;"><span class="expand-icon"></span><span class="tree-label">Tech News</span></div><div class="tree-children" expanded=""></div></div><div class="tree-item" role="treeitem" draggable="true" has-children="true" may-have-children="" expanded=""><div class="tree-row" has-children="true" may-have-children="" style="-webkit-padding-start: 20px;"><span class="expand-icon"></span><span class="tree-label">TECH</span></div><div class="tree-children" expanded=""><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 40px;"><span class="expand-icon"></span><span class="tree-label">Rackspace</span></div><div class="tree-children"></div></div><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 40px;"><span class="expand-icon"></span><span class="tree-label">Citrix</span></div><div class="tree-children"></div></div></div></div><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 20px;"><span class="expand-icon"></span><span class="tree-label">SLB</span></div><div class="tree-children"></div></div></div></div><div class="tree-item" role="treeitem" draggable="false" has-children="true" may-have-children=""><div class="tree-row" has-children="true" may-have-children="" style="-webkit-padding-start: 0px;"><span class="expand-icon"></span><span class="tree-label">Other Bookmarks</span></div><div class="tree-children"><div class="tree-item" role="treeitem" draggable="true" has-children="true" may-have-children="" expanded=""><div class="tree-row" has-children="true" may-have-children="" style="-webkit-padding-start: 20px;"><span class="expand-icon"></span><span class="tree-label">News</span></div><div class="tree-children" expanded=""><div class="tree-item" role="treeitem" draggable="true" has-children="true" may-have-children="" expanded=""><div class="tree-row" has-children="true" may-have-children="" style="-webkit-padding-start: 40px;"><span class="expand-icon"></span><span class="tree-label">US</span></div><div class="tree-children" expanded=""><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 60px;"><span class="expand-icon"></span><span class="tree-label">BioStats</span></div><div class="tree-children"></div></div></div></div><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 40px;"><span class="expand-icon"></span><span class="tree-label">Business</span></div><div class="tree-children"></div></div><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 40px;"><span class="expand-icon"></span><span class="tree-label">News</span></div><div class="tree-children"></div></div></div></div><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 20px;"><span class="expand-icon"></span><span class="tree-label">Mac</span></div><div class="tree-children"></div></div><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 20px;"><span class="expand-icon"></span><span class="tree-label">Kids</span></div><div class="tree-children"></div></div><div class="tree-item" role="treeitem" draggable="true" has-children="true" may-have-children="" expanded=""><div class="tree-row" has-children="true" may-have-children="" style="-webkit-padding-start: 20px;"><span class="expand-icon"></span><span class="tree-label">Entertainment</span></div><div class="tree-children" expanded=""><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 40px;"><span class="expand-icon"></span><span class="tree-label">Movies &amp; DVDs</span></div><div class="tree-children"></div></div><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 40px;"><span class="expand-icon"></span><span class="tree-label">iTunes</span></div><div class="tree-children"></div></div></div></div><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 20px;"><span class="expand-icon"></span><span class="tree-label">Shopping</span></div><div class="tree-children"></div></div><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 20px;"><span class="expand-icon"></span><span class="tree-label">Travel</span></div><div class="tree-children"></div></div><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 20px;"><span class="expand-icon"></span><span class="tree-label">Tools and Reference</span></div><div class="tree-children"></div></div><div class="tree-item" role="treeitem" draggable="true" has-children="true" may-have-children="" expanded=""><div class="tree-row" has-children="true" may-have-children="" style="-webkit-padding-start: 20px;"><span class="expand-icon"></span><span class="tree-label">Imported IE Favorites</span></div><div class="tree-children" expanded=""><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 40px;"><span class="expand-icon"></span><span class="tree-label">Toolbar Favorites</span></div><div class="tree-children"></div></div><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 40px;"><span class="expand-icon"></span><span class="tree-label">Apple</span></div><div class="tree-children"></div></div><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 40px;"><span class="expand-icon"></span><span class="tree-label">Apple Education</span></div><div class="tree-children"></div></div><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 40px;"><span class="expand-icon"></span><span class="tree-label">Where to Buy Macintosh Products</span></div><div class="tree-children"></div></div><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 40px;"><span class="expand-icon"></span><span class="tree-label">Macintosh Publications</span></div><div class="tree-children"></div></div><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 40px;"><span class="expand-icon"></span><span class="tree-label">QuickTime</span></div><div class="tree-children"></div></div></div></div><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 20px;"><span class="expand-icon"></span><span class="tree-label">Business Research</span></div><div class="tree-children"></div></div><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 20px;"><span class="expand-icon"></span><span class="tree-label">Horse Stuff</span></div><div class="tree-children"></div></div><div class="tree-item" role="treeitem" draggable="true" has-children="true" may-have-children="" expanded=""><div class="tree-row" has-children="true" may-have-children="" style="-webkit-padding-start: 20px;"><span class="expand-icon"></span><span class="tree-label">Paradise/Cattaro/OTG</span></div><div class="tree-children" expanded=""><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 40px;"><span class="expand-icon"></span><span class="tree-label">OTG</span></div><div class="tree-children"></div></div><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 40px;"><span class="expand-icon"></span><span class="tree-label">Bandera</span></div><div class="tree-children"></div></div><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 40px;"><span class="expand-icon"></span><span class="tree-label">Horse Stuff</span></div><div class="tree-children"></div></div><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 40px;"><span class="expand-icon"></span><span class="tree-label">Bandera</span></div><div class="tree-children"></div></div></div></div><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 20px;"><span class="expand-icon"></span><span class="tree-label">TB</span></div><div class="tree-children"></div></div><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 20px;"><span class="expand-icon"></span><span class="tree-label">Slavery - History Paper</span></div><div class="tree-children"></div></div><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 20px;"><span class="expand-icon"></span><span class="tree-label">OTG</span></div><div class="tree-children"></div></div><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 20px;"><span class="expand-icon"></span><span class="tree-label">Malicious Logic</span></div><div class="tree-children"></div></div><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 20px;"><span class="expand-icon"></span><span class="tree-label">Apple</span></div><div class="tree-children"></div></div><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 20px;"><span class="expand-icon"></span><span class="tree-label">Sci Fi Paper</span></div><div class="tree-children"></div></div><div class="tree-item" role="treeitem" draggable="true" has-children="true" may-have-children="" expanded=""><div class="tree-row" has-children="true" may-have-children="" style="-webkit-padding-start: 20px;"><span class="expand-icon"></span><span class="tree-label">School</span></div><div class="tree-children" expanded=""><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 40px;"><span class="expand-icon"></span><span class="tree-label">Slavery - History Paper</span></div><div class="tree-children"></div></div><div class="tree-item" role="treeitem" draggable="true" has-children="true" may-have-children="" expanded=""><div class="tree-row" has-children="true" may-have-children="" style="-webkit-padding-start: 40px;"><span class="expand-icon"></span><span class="tree-label">Economics Paper</span></div><div class="tree-children" expanded=""><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 60px;"><span class="expand-icon"></span><span class="tree-label">Economics Paper</span></div><div class="tree-children"></div></div></div></div><div class="tree-item" role="treeitem" draggable="true" has-children="true" may-have-children="" expanded=""><div class="tree-row" has-children="true" may-have-children="" style="-webkit-padding-start: 40px;"><span class="expand-icon"></span><span class="tree-label">Stem Cell Paper</span></div><div class="tree-children" expanded=""><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 60px;"><span class="expand-icon"></span><span class="tree-label">Stem Cell Paper</span></div><div class="tree-children"></div></div></div></div><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 40px;"><span class="expand-icon"></span><span class="tree-label">Law School</span></div><div class="tree-children"></div></div><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 40px;"><span class="expand-icon"></span><span class="tree-label">Malicious Logic</span></div><div class="tree-children"></div></div><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 40px;"><span class="expand-icon"></span><span class="tree-label">Sci Fi Paper</span></div><div class="tree-children"></div></div><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 40px;"><span class="expand-icon"></span><span class="tree-label">Poly Sci</span></div><div class="tree-children"></div></div><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 40px;"><span class="expand-icon"></span><span class="tree-label">Poly Sci</span></div><div class="tree-children"></div></div><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 40px;"><span class="expand-icon"></span><span class="tree-label">Law School</span></div><div class="tree-children"></div></div></div></div><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 20px;"><span class="expand-icon"></span><span class="tree-label">MIS Project</span></div><div class="tree-children"></div></div><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 20px;"><span class="expand-icon"></span><span class="tree-label">Marketing Cases/Project</span></div><div class="tree-children"></div></div><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 20px;"><span class="expand-icon"></span><span class="tree-label">Leadership</span></div><div class="tree-children"></div></div><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 20px;"><span class="expand-icon"></span><span class="tree-label">Notary</span></div><div class="tree-children"></div></div><div class="tree-item" role="treeitem" draggable="true" has-children="true" may-have-children="" expanded=""><div class="tree-row" has-children="true" may-have-children="" style="-webkit-padding-start: 20px;"><span class="expand-icon"></span><span class="tree-label">Business</span></div><div class="tree-children" expanded=""><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 40px;"><span class="expand-icon"></span><span class="tree-label">12 Bridges</span></div><div class="tree-children"></div></div></div></div><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 20px;"><span class="expand-icon"></span><span class="tree-label">Clothes</span></div><div class="tree-children"></div></div><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 20px;"><span class="expand-icon"></span><span class="tree-label">O &amp; G</span></div><div class="tree-children"></div></div><div class="tree-item" role="treeitem" draggable="true"><div class="tree-row" style="-webkit-padding-start: 20px;"><span class="expand-icon"></span><span class="tree-label">SLB</span></div><div class="tree-children"></div></div></div></div><div class="tree-item" role="treeitem" draggable="false"><div class="tree-row" style="-webkit-padding-start: 0px;"><span class="expand-icon"></span><span class="tree-label">Mobile Bookmarks</span></div><div class="tree-children"></div></div></tree>
+  </div>
+  <div class="splitter"></div>
+  <list id="list" tabindex="2" role="list" contextmenu="#context-menu" aria-activedescendant=""><div class="spacer" style="height: 0px;"></div><div role="listitem" draggable="true"><div class="label" style="background-image: -webkit-image-set(url(chrome://favicon/size/16@1x/http://bootswatch.com/) 1x, url(chrome://favicon/size/16@2x/http://bootswatch.com/) 2x); background-size: 16px;">Bootswatch: Free themes for Bootstrap</div><div class="url">http://bootswatch.com/</div></div><div role="listitem" draggable="true"><div class="label" style="background-image: -webkit-image-set(url(chrome://favicon/size/16@1x/https://wrapbootstrap.com/) 1x, url(chrome://favicon/size/16@2x/https://wrapbootstrap.com/) 2x); background-size: 16px;">WrapBootstrap - Bootstrap Themes &amp; Templates</div><div class="url">https://wrapbootstrap.com/</div></div><div role="listitem" draggable="true"><div class="label" style="background-image: -webkit-image-set(url(chrome://favicon/size/16@1x/http://fortawesome.github.io/Font-Awesome/) 1x, url(chrome://favicon/size/16@2x/http://fortawesome.github.io/Font-Awesome/) 2x); background-size: 16px;">Font Awesome, the iconic font designed for Bootstrap</div><div class="url">http://fortawesome.github.io/Font-Awesome/</div></div><div role="listitem" draggable="true"><div class="label" style="background-image: -webkit-image-set(url(chrome://favicon/size/16@1x/http://colourco.de/) 1x, url(chrome://favicon/size/16@2x/http://colourco.de/) 2x); background-size: 16px;">colourcode - find your colour scheme</div><div class="url">http://colourco.de/</div></div><div role="listitem" draggable="true"><div class="label" style="background-image: -webkit-image-set(url(chrome://favicon/size/16@1x/https://kuler.adobe.com/explore/newest/) 1x, url(chrome://favicon/size/16@2x/https://kuler.adobe.com/explore/newest/) 2x); background-size: 16px;">Explore | All Themes - Adobe Kuler</div><div class="url">https://kuler.adobe.com/explore/newest/</div></div><div role="listitem" draggable="true"><div class="label" style="background-image: -webkit-image-set(url(chrome://favicon/size/16@1x/http://www.w3.org/TR/CSS21/fonts.html#generic-font-families) 1x, url(chrome://favicon/size/16@2x/http://www.w3.org/TR/CSS21/fonts.html#generic-font-families) 2x); background-size: 16px;">Fonts</div><div class="url">http://www.w3.org/TR/CSS21/fonts.html#generic-font-families</div></div><div class="spacer" style="height: 0px;"></div></list>
+</div>
+
+<!-- Organize menu -->
+<command i18n-values=".label:rename_folder" id="rename-folder-command" hidden="" disabled="disabled"></command>
+
+<command i18n-values=".label:edit" id="edit-command" disabled="disabled"></command>
+<command i18n-values=".label:show_in_folder" id="show-in-folder-command" disabled="disabled"></command>
+
+<command i18n-values=".label:cut" id="cut-command" disabled="disabled"></command>
+<command i18n-values=".label:copy" id="copy-command" disabled="disabled"></command>
+<command i18n-values=".label:paste" id="paste-from-organize-menu-command" disabled="disabled"></command>
+
+<command i18n-values=".label:paste" id="paste-from-context-menu-command" disabled="disabled"></command>
+
+<command i18n-values=".label:delete" id="delete-command" disabled="disabled"></command>
+<command i18n-values=".label:undo_delete" id="undo-delete-command"></command>
+<command i18n-values=".label:sort" id="sort-command"></command>
+<command i18n-values=".label:add_new_bookmark" id="add-new-bookmark-command"></command>
+
+<command i18n-values=".label:new_folder" id="new-folder-command"></command>
+
+<!-- Tools menu -->
+<command i18n-values=".label:import_menu" id="import-menu-command"></command>
+<command i18n-values=".label:export_menu" id="export-menu-command"></command>
+
+<!-- open * are handled in canExecute handler -->
+<command id="open-in-new-tab-command" label="Open All Bookmarks"></command>
+<command id="open-in-background-tab-command"></command>
+<command id="open-in-new-window-command" label="Open All Bookmarks in New Window"></command>
+<command id="open-incognito-window-command" label="Open All Bookmarks in Incognito Window"></command>
+<command id="open-in-same-window-command" disabled="disabled"></command>
+
+<command id="undo-command"></command>
+
+<!-- TODO(arv): I think the commands might be better created in code? -->
+
+<menu id="organize-menu" class="decorated" role="menu" hidden="">
+  <button command="#add-new-bookmark-command" class="custom-appearance" role="menuitem">Add Page...</button>
+  <button command="#new-folder-command" class="custom-appearance" role="menuitem">Add Folder...</button>
+  <hr class="custom-appearance">
+  <button command="#rename-folder-command" class="custom-appearance" role="menuitem" disabled="">Rename...</button>
+  <button command="#edit-command" class="custom-appearance" role="menuitem" disabled="">Edit...</button>
+  <button command="#show-in-folder-command" class="custom-appearance" role="menuitem" disabled="">Show in Folder</button>
+  <hr class="custom-appearance">
+  <button command="#cut-command" class="custom-appearance" role="menuitem" disabled="">Cut</button>
+  <button command="#copy-command" class="custom-appearance" role="menuitem" disabled="">Copy</button>
+  <button command="#paste-from-organize-menu-command" class="custom-appearance" role="menuitem" disabled="">Paste</button>
+  <hr class="custom-appearance">
+  <button command="#delete-command" class="custom-appearance" role="menuitem" disabled="">Delete</button>
+  <button command="#undo-delete-command" class="custom-appearance" role="menuitem">Undo Delete</button>
+  <hr class="custom-appearance">
+  <button command="#sort-command" class="custom-appearance" role="menuitem">Reorder by Title</button>
+  <hr class="custom-appearance">
+  <button command="#import-menu-command" class="custom-appearance" role="menuitem">Import Bookmarks from HTML File...</button>
+  <button command="#export-menu-command" class="custom-appearance" role="menuitem">Export Bookmarks to HTML File...</button>
+</menu>
+
+<menu id="context-menu" class="decorated" role="menu" hidden="" style="bottom: auto; top: 210px; right: auto; left: 121px;">
+  <button command="#open-in-new-tab-command" class="custom-appearance" role="menuitem">Open All Bookmarks</button>
+  <button command="#open-in-new-window-command" class="custom-appearance" role="menuitem">Open All Bookmarks in New Window</button>
+  <button command="#open-incognito-window-command" class="custom-appearance" role="menuitem">Open All Bookmarks in Incognito Window</button>
+  <hr class="custom-appearance">
+  <button command="#rename-folder-command" class="custom-appearance" role="menuitem" disabled="">Rename...</button>
+  <button command="#edit-command" class="custom-appearance" role="menuitem" disabled="">Edit...</button>
+  <button command="#show-in-folder-command" class="custom-appearance" role="menuitem" disabled="">Show in Folder</button>
+  <hr class="custom-appearance">
+  <button command="#cut-command" class="custom-appearance" role="menuitem" disabled="">Cut</button>
+  <button command="#copy-command" class="custom-appearance" role="menuitem" disabled="">Copy</button>
+  <button command="#paste-from-context-menu-command" class="custom-appearance" role="menuitem" disabled="">Paste</button>
+  <hr class="custom-appearance">
+  <button command="#delete-command" class="custom-appearance" role="menuitem" disabled="">Delete</button>
+  <button command="#undo-delete-command" class="custom-appearance" role="menuitem">Undo Delete</button>
+  <hr class="custom-appearance">
+  <button command="#add-new-bookmark-command" class="custom-appearance" role="menuitem">Add Page...</button>
+  <button command="#new-folder-command" class="custom-appearance" role="menuitem">Add Folder...</button>
+</menu>
+
+<script src="chrome-extension://eemcgdkfndhakfknompkggombfjjjeno/js/main.js"></script>
+
+
+</body></html>

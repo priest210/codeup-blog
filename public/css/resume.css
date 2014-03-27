@@ -1,0 +1,56 @@
+    <style>
+
+      .navbar-brand,
+      .navbar-nav li a {
+          line-height: 150px;
+          height: 150px;
+          padding-top: 0px;
+          font-size: 40px;
+      }
+
+      .jumbotron {
+        margin-bottom: 23px;
+      }
+
+      #skills-table {
+        font-size: 20px;
+        text-align: center; 
+      }
+
+      .panel-title {
+        font-size: 24px;
+      }
+      .list-group-item {
+        font-size: 18px;
+      }
+
+      #experience-header {
+        background-color: #5cb85c;
+      }
+      #experience-background {
+        background-color: #2b3e50;
+      }
+      
+      .link-bar {
+        height: 100px;
+        background-color: #000;
+        padding: 5px; 
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      #ex-icons-left {
+        margin-left: 500px;
+      }
+
+      #ex-icons-center {
+        margin-left: 600px;
+        float: left;
+      }
+
+      #ex-icons-right {
+        margin-left: 700px;
+      }
+
+
+    </style>
