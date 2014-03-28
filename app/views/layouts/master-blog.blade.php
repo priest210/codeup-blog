@@ -37,10 +37,9 @@
 	    <p><a href="http://www.linkedin.com/in/kenpriest/" class="btn btn-primary btn-lg" target="_blank">Learn more about me!</a></p>
     </div>
 
-<div class="well well-lg">
     @yield('title')
     @yield('content')
-</div>
+
 
 </body>
 </div>
