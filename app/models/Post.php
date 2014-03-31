@@ -2,7 +2,7 @@
 
 use Carbon/Carbon;
 
-class Post extends Eloquent {
+class Post extends Base {
 
 	protected $table = 'posts';
 
