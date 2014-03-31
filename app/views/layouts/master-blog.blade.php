@@ -40,8 +40,8 @@
     @yield('title')
     @yield('content')
 
-
 </body>
+    <p class="blog-post-title-meta">{{ $posts->links() }}</h>
 </div>
 
 @yield('footer')
