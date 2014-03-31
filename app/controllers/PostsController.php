@@ -1,10 +1,10 @@
 <?php
 
-class PostsController extends \BaseController {
+class PostsController extends BaseController {
 
 	public function index()
 	{
-		$posts = Post::paginate(4);
+		$posts = Post::paginate(4);	
 		return View::make('posts.index')->with('posts', $posts);
 	}
 
@@ -22,7 +22,8 @@ class PostsController extends \BaseController {
 		    // attempt validation
 		    if ($validator->fails())
 		    {
-		        return Redirect::back()->withInput()->withErrors($validator);
+		    	Session::flash('errorMessage', 'Apparently there seems to be an error');
+		        return Redirect::action('PostsController@create')->withInput()->withErrors($validator);
 		    }
 		    else {
 				// save to DB
@@ -31,10 +32,11 @@ class PostsController extends \BaseController {
 				$post->title = Input::get('title');
 				$post->body = Input::get('body');
 				$post->save();
+
+				Session::flash('successMessage', "Your post " . input::get('title') . " has succesfully been saved");
 				return Redirect::action('PostsController@index');
 			}
 	}
-
 
 	public function show($id)
 	{

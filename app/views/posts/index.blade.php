@@ -1,8 +1,15 @@
 @extends('layouts.master-blog')
 
-
-
 @section('content')
+
+@if (Session::has('successMessage'))
+    <div class="alert alert-success">{{{ Session::get('successMessage') }}}</div>
+@endif
+
+@if (Session::has('errorMessage'))
+    <div class="alert alert-danger">{{{ Session::get('errorMessage') }}}</div>
+@endif
+
 	<!-- Iterates through posts returned from table in DB -->
 	@foreach ($posts as $post)
 	<div class="well well-lg">
