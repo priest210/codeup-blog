@@ -8,7 +8,7 @@
 	<div class="well well-lg">
 		<div class="blog-post">
 		    <h2 class="blog-post-title">{{{$post->title}}}</h2>
-            <p class="blog-post-meta">{{{$post->created_at->format('l, F jS Y @ h:i:s A')}}} by Ken Priest</p>
+            <p class="blog-post-meta">{{{$post->created_at->setTimezone('America/Chicago')->format('l, F jS Y @ h:i:s A')}}} by Ken Priest</p>
             <p>{{{$post->body}}}</p>              
 		</div>
 	</div>
