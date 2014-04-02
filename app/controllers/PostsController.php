@@ -44,8 +44,20 @@ class PostsController extends \BaseController {
 		    }
 		    else {
 				// save to DB
-				Log::info(Input::all());
-			 	$post = new Post();
+
+		    	$post = new Post();
+
+				if (Input::hasFile('image'))
+				{
+				    $file = Input::file('image');
+				    $destinationPath = 'img/';
+				    $filename = $file->getClientOriginalName();
+				    Input::file('image')->move($destinationPath, $filename);
+				    $pathToFile = "/img/" . $filename;
+				    $post->image = $pathToFile;
+
+				}
+			 	
 			 	$post->user_id = Auth::user()->id;
 				$post->title = Input::get('title');
 				$post->body = Input::get('body');
@@ -81,8 +93,18 @@ class PostsController extends \BaseController {
 		    if ($validator->fails())
 		    {
 		        return Redirect::back()->withInput()->withErrors($validator);
-		    }
-		    else {
+		    } else {
+
+		    	if (Input::hasFile('image'))
+		    	{
+			    $file = Input::file('image');
+			    $destinationPath = 'img/';
+			    $filename = $file->getClientOriginalName();
+			    Input::file('image')->move($destinationPath, $filename);
+			    $pathToFile = "/img/" . $filename;
+			    $post->image = $pathToFile;
+				}
+
 				// save to DB
 				$post->title = Input::get('title');
 				$post->body = Input::get('body');
@@ -93,8 +115,10 @@ class PostsController extends \BaseController {
 
 	
 	public function destroy($id)
-	{
-		return "Delete a specific post";
+	{	
+		$post = Post::findOrFail($id);
+		$post->delete();
+		return Redirect::action('PostsController@index');
 	}
 
 }
