@@ -30,7 +30,32 @@ class HomeController extends BaseController {
 		return View::make('portfolio-view');
 	}
 
+	public function showLogin()
+	{
+		return View::make('login');
+	}
+		
+	public function doLogin()
+	{
+		if (Auth::attempt(array('email' => Input::get('email'), 'password' => Input::get('password'))))
+		{	
+			Session::flash('successMessage', "You have logged in succesfully");
+		    return Redirect::intended('/posts');
+		}
+		else
+		{
+			Session::flash('errorMessage', 'Login Unsuccessful.  Verify your credentials');
+		    Return Redirect::back()->withInput();
+		}
+	}
 
-
-
+	public function logout()
+	{
+		Auth::logout();
+		return Redirect::action('PostsController@index');
+	}
 }
+
+
+
+
