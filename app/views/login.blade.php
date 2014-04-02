@@ -6,14 +6,19 @@
  <div class="container">
 	{{ Form::open(array('action' => 'HomeController@doLogin', 'class' => 'form-signin')) }}
         <div class="col-lg-4" >
-        <h2 class="form-signin-heading">Please Log In</h2>
-        <input name="email" type="email" class="form-control" placeholder="Email address" required autofocus>
-        <input name="password" type="password" class="form-control" placeholder="Password" required>
-        <label class="checkbox">
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+	        <h2 class="form-signin-heading">Please Log In</h2>
+	        <input name="email" type="email" class="form-control" placeholder="Email address" required autofocus>
+	        <input name="password" type="password" class="form-control" placeholder="Password" required>
+	        <label class="checkbox">
+	          <input type="checkbox" value="remember-me"> Remember me
+	        </label>
+	        <div class="row">
+	        	<div class=".col-md-6 .col-md-offset-3" >
+	        		<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+	        	</div>
+	    	</div>
     	</div>
+
      {{ Form::close() }}
  </div>
 @stop
