@@ -9,6 +9,7 @@
 		<div class="blog-post">
 		    <h2 class="blog-post-title">{{{$post->title}}}</h2>
             <p class="blog-post-meta">{{{$post->created_at->setTimezone('America/Chicago')->format('l, F jS Y @ h:i:s A')}}} {{{ $post->user->email }}}</p>
+            <img src="{{{ $post->image }}}">
             <p>{{{$post->body}}}</p>              
 		</div>
 	</div>
