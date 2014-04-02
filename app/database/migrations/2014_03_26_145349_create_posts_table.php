@@ -19,12 +19,6 @@ class CreatePostsTable extends Migration {
             $table->text('body');
             $table->timestamps();
         });
-
-        Schema::table('posts', function($table)
-		{
-		    $table->integer('user_id')->unsigned();
-		    $table->foreign('user_id')->references('id')->on('users');
-		});
 	}
 
 	/**
@@ -36,11 +30,5 @@ class CreatePostsTable extends Migration {
 	{
 		Schema::drop('posts');
 	}
-
-	Schema::table('posts', function($table)
-	{
-	    $table->dropForeign('posts_user_id_foreign');
-	    $table->dropColumn('user_id');
-	});
 
 }
