@@ -17,6 +17,7 @@
 
     <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/slate-bootstrap.css" rel="stylesheet">
+    <link href="signin.css" rel="stylesheet">
 
 </head>
 
@@ -29,11 +30,26 @@
               <li><a href="#">Resume</a></li>          
               <li><a href="#">Portfolio</a></li>
               <li><a href="#">Contact Me</a></li>
+              @if (Auth::check())
+              <li><a href="{{{ action('HomeController@logout') }}}">Logout ({{{ Auth::user()->email }}}) </a></li>
+              @else
+              <li><a href="{{{ action('HomeController@showLogin') }}}">Login</a></li>
+              @endif
             </ul>
+                <div class="navbar-form navbar-left nav navbar-nav col-lg-8">
+                {{Form::open(array('action' => array('PostsController@index'), 'method' => 'GET')) }}
+                    {{ Form::text('search') }}
+                    {{ Form::submit('Search') }}
+                {{Form::close() }}
+            </div>
         </div>
     </div>
 
 	<div class="jumbotron">
+        <h1>Ken Priest </h1>
+        <p>Welcome,</p>  
+        <p>This page was created using the finest HTML, CSS  and Javascript craftsmanship.</p>
+        <p>Rest assured no shortcuts were taken and no animals were harmed during the development process.</p>
 	    <p><a href="http://www.linkedin.com/in/kenpriest/" class="btn btn-primary btn-lg" target="_blank">Learn more about me!</a></p>
     </div>
 
@@ -52,6 +68,11 @@
 </body>
     <p class="blog-post-title-meta">{{ $posts->links() }}</h>
 </div>
+
+
+
+
+
 
 @yield('footer')
 </html>
