@@ -11,6 +11,19 @@
 |
 */
 
+Route::get('orm-test', function() {
+	$posts = Post::all();
+	foreach ($posts as $post) {
+		echo $post->title . '<br>';
+	}
+});
+
+Route::get('post-test', function() {
+	$post = Post::find(2);
+
+});
+
+
 Route::resource('posts', 'PostsController');
 
 Route::get('/', 'HomeController@showResume');
@@ -18,6 +31,12 @@ Route::get('/', 'HomeController@showResume');
 Route::get('/resume', 'HomeController@showResume');
 
 Route::get('/portfolio', 'HomeController@showPortfolio');
+
+Route::get('/login', 'HomeController@showLogin');
+
+Route::post('/login', 'HomeController@doLogin');
+
+Route::get('/logout', 'HomeController@logout');
 
 
 
