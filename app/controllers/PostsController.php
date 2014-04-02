@@ -1,11 +1,28 @@
 <?php
 
-class PostsController extends BaseController {
+class PostsController extends \BaseController {
+
+	public function __construct() {
+
+		parent::__construct();
+
+		$this->beforeFilter('auth', array('except' => array('index', 'show')));
+	}
+
 
 	public function index()
-	{
-		$posts = Post::paginate(4);	
-		return View::make('posts.index')->with('posts', $posts);
+	{	
+		$search =Input::get('search');
+		$query = Post::with('user')->orderBy('created_at', 'desc');	
+		if (is_null($search))
+		{
+			$posts = $query->paginate(3);
+		} else {
+			$posts = $query->where('title', 'LIKE', "%{$search}%")
+						   ->orWhere('body', 'LIKE', "%{$search}%")
+						   ->paginate(3);
+		}
+		return View::make('posts.index')->with(array('posts' => $posts));
 	}
 
 	public function create()
@@ -29,6 +46,7 @@ class PostsController extends BaseController {
 				// save to DB
 				Log::info(Input::all());
 			 	$post = new Post();
+			 	$post->user_id = Auth::user()->id;
 				$post->title = Input::get('title');
 				$post->body = Input::get('body');
 				$post->save();
