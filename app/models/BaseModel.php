@@ -19,4 +19,5 @@ class BaseModel extends Eloquent {
 	}
 
 
+
 }
