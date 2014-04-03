@@ -46,6 +46,8 @@ class PostsController extends \BaseController {
 				// save to DB
 
 		    	$post = new Post();
+		    	$post->title = Input::get('title');
+				$post->body = Input::get('body');
 
 				if (Input::hasFile('image'))
 				{
@@ -55,14 +57,10 @@ class PostsController extends \BaseController {
 				    Input::file('image')->move($destinationPath, $filename);
 				    $pathToFile = "/img/" . $filename;
 				    $post->image = $pathToFile;
-
 				}
 			 	
 			 	$post->user_id = Auth::user()->id;
-				$post->title = Input::get('title');
-				$post->body = Input::get('body');
 				$post->save();
-
 				Session::flash('successMessage', "Your post " . input::get('title') . " has succesfully been saved");
 				return Redirect::action('PostsController@index');
 			}
