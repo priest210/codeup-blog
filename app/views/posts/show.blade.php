@@ -2,13 +2,33 @@
 
 
 @section('content')
-	<h1>{{{ $posts->title }}}</h1>
+	<h1>{{{ $post->title }}}</h1>
 
 	<!-- Grabs single post from object returned from table in DB -->
 		<div class="blog-post">
-	            <h2 class="blog-post-title">{{{$posts->title}}}</h2>
-	            <p class="blog-post-meta">{{{$posts->created_at->setTimezone('America/Chicago')->format('l, F jS Y @ h:i:s A')}}}</p>
-	            <p>{{{$posts->body}}}</p>
+	            <h2 class="blog-post-title">{{{$post->title}}}</h2>
+	            <p class="blog-post-meta">{{{$post->created_at->setTimezone('America/Chicago')->format('l, F jS Y @ h:i:s A')}}}</p>
+	            <p>{{{$post->body}}}</p>
 	          	<a href="{{{ action('PostsController@index') }}}">Return to posts listing</a></p>
 		</div>
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'kenpriest'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+		
 @stop
+
