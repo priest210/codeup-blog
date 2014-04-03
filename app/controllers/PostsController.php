@@ -68,8 +68,8 @@ class PostsController extends \BaseController {
 
 	public function show($id)
 	{
-		$posts = Post::findOrFail($id);
-		return View::make('posts.show')->with('posts', $posts);
+		$post = Post::findOrFail($id);
+		return View::make('posts.show')->with('post', $post);
 	}
 
 	
@@ -83,6 +83,8 @@ class PostsController extends \BaseController {
 	public function update($id)
 	{
 			$post = Post::findOrFail($id);
+			$post->title = Input::get('title');
+			$post->body = Input::get('body');
 
 		  	// create the validator
 		    $validator = Validator::make(Input::all(), Post::$rules);
@@ -91,10 +93,11 @@ class PostsController extends \BaseController {
 		    if ($validator->fails())
 		    {
 		        return Redirect::back()->withInput()->withErrors($validator);
-		    } else {
+		    } 
+		    else {
 
-		    	if (Input::hasFile('image'))
-		    	{
+	    	if (Input::hasFile('image'))
+		    {
 			    $file = Input::file('image');
 			    $destinationPath = 'img/';
 			    $filename = $file->getClientOriginalName();
@@ -104,10 +107,9 @@ class PostsController extends \BaseController {
 				}
 
 				// save to DB
-				$post->title = Input::get('title');
-				$post->body = Input::get('body');
-				$post->save();
-				return Redirect::action('PostsController@index');
+			$post->save();
+			return Redirect::action('PostsController@index');
+			
 			}
 	}
 
