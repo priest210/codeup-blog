@@ -27,9 +27,10 @@
         <div class="navbar navbar-default">
             <ul class="nav navbar-nav">
               <li><a href="#">About Me</a></li>
-              <li><a href="#">Resume</a></li>          
+              <li><a href="http://blog.dev/resume">Resume</a></li>          
               <li><a href="#">Portfolio</a></li>
               <li><a href="#">Contact Me</a></li>
+
               @if (Auth::check())
               <li><a href="{{{ action('HomeController@logout') }}}">Logout ({{{ Auth::user()->email }}}) </a></li>
               @else

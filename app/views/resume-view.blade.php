@@ -4,47 +4,6 @@
     <title>Ken Priest's Resume</title>
 @stop
 
-@section('cssScript')
-    <link href="css/superhero-bootstrap.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/superhero-bootstrap.css">
-    <link href="css/resume.css" rel="stylesheet">
-@stop
-
-@section('jumbo')
-	<h1>Ken Priest </h1>
-	<p>Welcome to my online resum&eacute;.
-	</p>  
-    <p>This page was created using the finest HTML, CSS  and Javascript craftsmanship.  
-    </p>
-	<p>Rest assured no shortcuts were taken and no animals were harmed during the development process.</p>
-@stop
-
-
-  <div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button> 
-      </div>
-
-      <div class="navbar-collapse collapse navbar-inverse-collapse" role="navigation">
-        <ul class="nav navbar-nav">
-          <li><a href="#profile">Profile</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#blog">Blog</a></li>
-          <li><a href="#contact">Contact me</a></li>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
 @section('content')
 
 	<div>
@@ -61,10 +20,7 @@
 		  	<div class="panel-heading">
 		    <h3 class="panel-title" id="skills">Skills</h3>
 			</div>
-		</div>
-	</div>
-	
-	<div class="panel panel-primary">
+
 	    <div class="panel-body">
 	    <table class="table" id="skills-table">
 	          <tr>
@@ -133,14 +89,14 @@
 	    <i class="fa fa-pencil "></i> Bachelor, Business Administration, GPA 3.4
 	      </a>
 	  </div>
-	<div class="panel-body"> 
-	    Wayland Baptist University, San Antonio, TX,  2005 – 2010
+		<div class="panel-body"> 
+		    Wayland Baptist University, San Antonio, TX,  2005 – 2010
+		</div>
 	</div>
-
-	</div>
-	<div class="panel panel-warning">
+	<div>
+	<div class="panel panel-warning" id="experience">
 	  <div id="experience-header" class="panel-heading" id="experience-header">
-	    <h3 class="panel-title"  id="experience">Experience</h3>
+	    <h3 class="panel-title">Experience</h3>
 	  </div>
 	  <div class="panel-body">
 	 
@@ -196,8 +152,6 @@
 
 
 @section('footer')
-
-
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
