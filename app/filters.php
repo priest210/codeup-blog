@@ -44,6 +44,31 @@ Route::filter('auth.basic', function()
 	return Auth::basic();
 });
 
+Route::filter('post.protect', function($route)
+{
+		$id = $route->getParameter('posts');
+
+		$post = Post::find($id);
+
+		if (!Auth::user()->allowedToManagePost($post)) {
+
+			Session::flash('errorMessage', "Not Authorized");
+
+			return Redirect::action('PostsController@show', $id);
+		};
+});
+
+Route::filter('auth.admin', function()
+{
+	if (Auth::guest() || !Auth::user()->isAdmin()) return Redirect::to('/');
+	
+});
+
+
+
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Guest Filter

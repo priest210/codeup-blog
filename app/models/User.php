@@ -10,6 +10,23 @@ class User extends BaseModel implements UserInterface, RemindableInterface {
 	 *
 	 * @var string
 	 */
+
+	public static $rules = array(
+		'first_name' => 'required|max:25',
+		'last_name' => 'required|max:25',
+		'email' => 'required|email|unique:users',
+		'password' => 'required|min:25',
+	);
+
+	const ROLE_ADMIN = 1;
+	const ROLE_USER = 2;
+
+	public static $ROLES = array(
+	     array(‘id’ => 1, ’name’ => ‘Administrator’),
+	     array(‘id’ => 2, ’name’ => ’User’)
+	); 
+
+
 	protected $table = 'users';
 
 	/**
@@ -53,6 +70,7 @@ class User extends BaseModel implements UserInterface, RemindableInterface {
 	 *
 	 * @return string
 	 */
+	
 	public function getReminderEmail()
 	{
 		return $this->email;
@@ -63,7 +81,26 @@ class User extends BaseModel implements UserInterface, RemindableInterface {
 	}
 	*/
 
+	public function canManagePost ($post)
+	{
+		return $this->isAdmin() || $this->id == $post->user_id;
+	}
+
+
+	public function isAdmin() {
+		return $this->role_id == Self::ROLE_ADMIN;
+	}
+
+	public function allowedToMangePost($posts)
+	{
+			return $this->id == $posts->user_id;
+	}
+
+
 }
+
+
+
 
 
 
