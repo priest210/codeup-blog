@@ -27,6 +27,23 @@ class User extends BaseModel implements UserInterface, RemindableInterface {
 	); 
 
 
+	
+	public function canManagePost ($post)
+	{
+		return $this->isAdmin() || $this->id == $post->user_id;
+	}
+
+
+	public function isAdmin() {
+		return $this->role_id == Self::ROLE_ADMIN;
+	}
+
+	public function allowedToMangePost($posts)
+	{
+			return $this->id == $posts->user_id;
+	}
+
+
 	protected $table = 'users';
 
 	/**
@@ -80,22 +97,6 @@ class User extends BaseModel implements UserInterface, RemindableInterface {
 
 	}
 	*/
-
-	public function canManagePost ($post)
-	{
-		return $this->isAdmin() || $this->id == $post->user_id;
-	}
-
-
-	public function isAdmin() {
-		return $this->role_id == Self::ROLE_ADMIN;
-	}
-
-	public function allowedToMangePost($posts)
-	{
-			return $this->id == $posts->user_id;
-	}
-
 
 }
 

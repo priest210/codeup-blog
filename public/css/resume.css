@@ -1,15 +1,33 @@
     <style>
 
+      /*#top {
+        padding-top: 70px;
+      }*/
+
+      #navie {
+        font-size: 24px;
+      }
       .navbar-brand,
-      .navbar-nav li a {
+      .nav navbar-nav li a, 
+      .nav navbar-nav {
           line-height: 150px;
           height: 150px;
           padding-top: 0px;
-          font-size: 40px;
+          font-size: 24px;
       }
 
+
       .jumbotron {
-        margin-bottom: 23px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        padding: 15px;
+      }
+      p {
+        text-indent: 50px;
+      }
+
+      #profile-body{
+        font-size: 24px;
       }
 
       #skills-table {

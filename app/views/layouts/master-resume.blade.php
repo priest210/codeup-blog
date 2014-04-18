@@ -18,9 +18,9 @@
 
 </head>
 
-<body>
+<body id="top">
 
-  <div class="navbar navbar-inverse" role="navigation">
+  <div class="navbar-inverse" role="navigation">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">
@@ -39,7 +39,9 @@
           <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="http://blog.dev/posts/">My Blog</a></li>
           <li><a href="#contact">Contact me</a></li>
-          </li>
+          <li><a href="href="http://www.linkedin.com/in/kenpriest/"<i class="fa fa-twitter-square"></i>Linkedin</a></li>
+          <li><a href="http://twitter.com/KenzLife"<i class="fa fa-twitter-square"></i>Twitter</a></li>
+          <li><a href="http://github.com/priest210"<i class="fa fa-twitter-square"></i>GitHub</a></li>
         </ul>
       </div>
     </div>
@@ -47,18 +49,15 @@
 
 <div class="container">
 	<div class="jumbotron">
-        <h1>Ken Priest </h1>
-        <p>Welcome to my online resum&eacute;.
-        </p>  
-        <p>This page was created using the finest HTML, CSS  and Javascript craftsmanship.  
-        </p>
-        <p>Rest assured no shortcuts were taken and no animals were harmed during the development process.</p>
-        <p><a href="http://www.linkedin.com/in/kenpriest/" class="btn btn-primary btn-lg" target="_blank">Learn more about me!</a></p>
+        <h1>Ken Priest</h1>
+        <h2>Welcome to my online resum&eacute;.
+        </h2>  
+        <p> I created this resum&eacute using Laravel, HTML, CSS, and Twitter Bootstrap.  I was going for a bolder look with eye catching colors, that was easy to navigate and read.  This project is going to be an ongoing work in progress where I will practice new ideas, techniques and formats.  While the content will stay up to date, the format is basically subject to change at any time.</p>
 	</div>
 
  @yield('content')
 </div>
-
+<h3><a href="#top" class="back-to-top">Back to Top</a></h3>
 </body>
 
 @yield('footer')
