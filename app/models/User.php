@@ -22,8 +22,8 @@ class User extends BaseModel implements UserInterface, RemindableInterface {
 	const ROLE_USER = 2;
 
 	public static $ROLES = array(
-	     array(‘id’ => 1, ’name’ => ‘Administrator’),
-	     array(‘id’ => 2, ’name’ => ’User’)
+	     array('id' => 1, 'name' => 'Administrator'),
+	     array('id' => 2, 'name' => 'User')
 	); 
 
 
