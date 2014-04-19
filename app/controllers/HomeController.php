@@ -32,7 +32,7 @@ class HomeController extends BaseController {
 
 	public function showBlog()
 	{
-		return View::make('posts.index');
+		return View::make('master-blog');
 	}
 
 	public function showLogin()
