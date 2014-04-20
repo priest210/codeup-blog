@@ -11,7 +11,7 @@
             <p class="blog-post-meta">{{{$post->created_at->setTimezone('America/Chicago')->format('l, F jS Y @ h:i:s A')}}} {{{ $post->user->email }}}</p>
             <img src="{{{ $post->image }}}">
             <p>{{{ Str::words($post->body, 10)}}}</p>  
-              		<p><a href="{{{ action('PostsController@show', $post->id) }}}">View Full Post</a></p>
+            <p><a href="{{{ action('PostsController@show', $post->id) }}}">View Full Post</a></p>
 
 		</div>
 	</div>
