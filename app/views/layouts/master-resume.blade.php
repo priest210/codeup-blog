@@ -52,7 +52,7 @@
         <h1>Ken Priest</h1>
         <h2>Welcome to my online resum&eacute;.
         </h2>  
-        <p> I created this resum&eacute using Laravel, HTML, CSS, and Twitter Bootstrap.  I was going for a bolder look with eye catching colors, that was easy to navigate and read.  This project is going to be an ongoing work in progress where I will practice new ideas, techniques and formats.  While the content will stay up to date, the format is basically subject to change at any time.</p>
+        <p> I created this resum&eacute using Laravel, HTML, CSS, and Twitter Bootstrap.  I was aiming for a bolder look with eye catching colors, that was easy to navigate and read.  This project is going to be an ongoing work in progress where I will practice new ideas, techniques and formats.  While the content will stay up to date, the format is basically subject to change at any time.</p>
 	</div>
 
  @yield('content')
