@@ -49,8 +49,9 @@
 	<div class="jumbotron">
         <h1>Ken Priest </h1>
         <p>Welcome,</p>  
-        <p>This page was created using the finest HTML, CSS  and Javascript craftsmanship.</p>
-        <p>Rest assured no shortcuts were taken and no animals were harmed during the development process.</p>
+        <p>Sharing my experience as a student in a Web Developer Coding Bootcamp and beyond.</p>
+        <p>As I gain knowledge and insight I will pass it on.  I would love to help others trying to learn to code from "scratch"
+            and lend some lessons learned advice to hopefully help learn and avoid some pitfalls as they go along.  </p>
 	    <p><a href="http://www.linkedin.com/in/kenpriest/" class="btn btn-primary btn-lg" target="_blank">Learn more about me!</a></p>
     </div>
 
