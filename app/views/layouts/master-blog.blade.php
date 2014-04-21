@@ -46,7 +46,7 @@
 	<div class="jumbotron">
         <h1>Ken Priest </h1>
         <p>Welcome,</p>  
-        <p>Sharing my experience as a student in <a href="http://www.codeup.com">Codeup's</a> Web Developer Bootcamp and beyond.</p>
+        <p>Sharing my experience as a student in <a href="http://www.codeup.com" target="_blank">Codeup's</a> Web Developer Bootcamp and beyond.</p>
         <p>As I gain knowledge and insight I will pass it on.  I would love to help others trying to learn to code from "scratch"
             and lend some lessons learned advice to hopefully help learn and avoid some pitfalls as they go along.  </p>
     </div>
