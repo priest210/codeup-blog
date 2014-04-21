@@ -78,9 +78,6 @@
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
     </script>
-
-</body>
-    <p class="blog-post-title-meta">{{ $posts->links() }}</h>
 </div>
 
 
@@ -89,4 +86,6 @@
 
 
 @yield('footer')
+
+</body>
 </html>

@@ -20,8 +20,6 @@
 
 
     @endforeach
+
+    <p class="blog-post-title-meta">{{ $posts->links() }}</h>
 @stop
-
-
-
-
