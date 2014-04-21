@@ -40,12 +40,6 @@
               <li><a href="{{{ action('HomeController@showLogin') }}}">Login</a></li>
               @endif
             </ul>
-                <div class="navbar-form navbar-left nav navbar-nav col-lg-8">
-                {{Form::open(array('action' => array('PostsController@index'), 'method' => 'GET')) }}
-                    {{ Form::text('search') }}
-                    {{ Form::submit('Search') }}
-                {{Form::close() }}
-            </div>
         </div>
     </div>
 
