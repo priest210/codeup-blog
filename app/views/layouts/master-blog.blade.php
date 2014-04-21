@@ -26,10 +26,13 @@
     <div>
         <div class="navbar navbar-default">
             <ul class="nav navbar-nav">
-              <li><a href="#">About Me</a></li>
-              <li><a href="http://blog.dev/resume">Resume</a></li>          
+              <li><a href="http://www.linkedin.com/in/kenpriest/">About Me</a></li>
+              <li><a href="{{{ action('HomeController@showResume') }}}">Resume</a></li>          
               <li><a href="#">Portfolio</a></li>
               <li><a href="#">Contact Me</a></li>
+              <li><a href="http://www.linkedin.com/in/kenpriest/"<i class="fa fa-twitter-square"></i>Linkedin</a></li>
+              <li><a href="http://twitter.com/KenzLife"<i class="fa fa-twitter-square"></i>Twitter</a></li>
+              <li><a href="http://github.com/priest210"<i class="fa fa-twitter-square"></i>GitHub</a></li>
 
               @if (Auth::check())
               <li><a href="{{{ action('HomeController@logout') }}}">Logout ({{{ Auth::user()->email }}}) </a></li>
@@ -49,10 +52,9 @@
 	<div class="jumbotron">
         <h1>Ken Priest </h1>
         <p>Welcome,</p>  
-        <p>Sharing my experience as a student in a Web Developer Coding Bootcamp and beyond.</p>
+        <p>Sharing my experience as a student in <a href="http://www.codeup.com">Codeup's</a> Web Developer Bootcamp and beyond.</p>
         <p>As I gain knowledge and insight I will pass it on.  I would love to help others trying to learn to code from "scratch"
             and lend some lessons learned advice to hopefully help learn and avoid some pitfalls as they go along.  </p>
-	    <p><a href="http://www.linkedin.com/in/kenpriest/" class="btn btn-primary btn-lg" target="_blank">Learn more about me!</a></p>
     </div>
 
     @yield('title')
