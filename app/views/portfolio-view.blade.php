@@ -5,15 +5,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	
 	<title>Ken Priest - Web Developer Portfolio</title> 
-	<meta name="description" content="BlackTie.co - Free Handsome Bootstrap Themes" />	    
+	<meta name="description" content="" />	    
 	<meta name="keywords" content="Web Developer, Lamp Stack, PHP, MySqL, JavaScript, HTML, CSS, Bootstrap">
 	<meta property="og:title" content="">
 
-	<link rel="stylesheet" type="text/css" href="/Munter/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/Munter/fancybox/jquery.fancybox-v=2.1.5.css" type="text/css" media="screen">
+	<link rel="stylesheet" type="text/css" href="/Munter/Theme/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/Munter/Theme/fancybox/jquery.fancybox-v=2.1.5.css" type="text/css" media="screen">
     <link rel="stylesheet" href="css/font-awesome.min.css" rel="stylesheet">
 	
-	<link rel="stylesheet" type="text/css" href="/Munter/css/style.css">	
+	<link rel="stylesheet" type="text/css" href="/Munter/Theme/css/style.css">	
 	
 	<link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,600,300,200&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 	
@@ -217,7 +217,7 @@
 			</div><!-- /row -->
 			<div class="row subtitle-row">
 				<div class="col-sm-1 hidden-sm">&nbsp;</div>
-				<div class="col-12 col-sm-10 font-light">You can find us literally anywhere, just push a button and we’re there</div>
+				<div class="col-12 col-sm-10 font-light">You can find me literally anywhere, just push a button and I am there</div>
 				<div class="col-sm-1 hidden-sm">&nbsp;</div>
 			</div><!-- /row -->
 			<div id="contact-row-4" class="row">
@@ -235,12 +235,12 @@
 					<span class="hover-text font-light ">San Antonio, TX</span></a>
 				</div><!-- /col12 -->
 				<div class="col-12 col-sm-2 with-hover-text">
-					<p><a target="_blank" href="#"><i class="icon icon-linkedin"></i></a></p>
-					<span class="hover-text font-light ">www.linkedin.com/in/kenpriest/</span></a>
+					<p><a target="_blank" href="www.linkedin.com/in/kenpriest/"><i class="icon icon-linkedin"></i></a></p>
+					<span class="hover-text font-light "></span></a>
 				</div><!-- /col12 -->
 				<div class="col-12 col-sm-2 with-hover-text">
-					<p><a target="_blank" href="#"><i class="icon icon-twitter"></i></a></p>
-					<span class="hover-text font-light ">@KenLife</span></a>
+					<p><a target="_blank" href="http://twitter.com/KenzLife"><i class="icon icon-twitter"></i></a></p>
+					<span class="hover-text font-light ">@KenzLife</span></a>
 				</div><!-- /col12 -->
 				<div class="col-sm-1 hidden-sm">&nbsp;</div>
 			</div><!-- /row -->
@@ -250,13 +250,13 @@
 </body>
 
 	<!-- SCRIPTS -->
-	<script src="/Munter/js/html5shiv.js"></script>
-	<script src="/Munter/js/jquery-1.10.2.min.js"></script>
-	<script src="/Munter/js/jquery-migrate-1.2.1.min.js"></script>
-	<script src="/Munter/js/bootstrap.min.js"></script>
-	<script src="/Munter/js/jquery.easing.1.3.js"></script>
-	<script type="text/javascript" src="/Munter/fancybox/jquery.fancybox.pack-v=2.1.5.js"></script>
-	<script src="/Munter/js/script.js"></script>
+	<script src="/Munter/Theme/js/html5shiv.js"></script>
+	<script src="/Munter/Theme/js/jquery-1.10.2.min.js"></script>
+	<script src="/Munter/Theme/js/jquery-migrate-1.2.1.min.js"></script>
+	<script src="/Munter/Theme/js/bootstrap.min.js"></script>
+	<script src="/Munter/Theme/js/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="/Munter/Theme/fancybox/jquery.fancybox.pack-v=2.1.5.js"></script>
+	<script src="/Munter/Theme/js/script.js"></script>
 	
 	<!-- fancybox init -->
 	<script>
