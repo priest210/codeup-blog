@@ -36,9 +36,9 @@
           <li><a href="#skills">Skills</a></li>
           <li><a href="#education">Education</a></li>
           <li><a href="#experience">Experience</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="{{{ action('HomeController@showPortfolio') }}}" target="_blank">Portfolio</a></li>
           <li><a href="{{{ action('PostsController@index') }}}">My Blog</a></li>
-          <li><a href="#contact">Contact me</a></li>
+          <li><a href="http://www.linkedin.com/in/kenpriest/" target="_blank">Contact me</a></li>
           <li><a href="http://www.linkedin.com/in/kenpriest/"<i class="fa fa-twitter-square" target="_blank"></i>Linkedin</a></li>
           <li><a href="http://twitter.com/KenzLife"<i class="fa fa-twitter-square" target="_blank"></i>Twitter</a></li>
           <li><a href="http://github.com/priest210"<i class="fa fa-twitter-square" target="_blank"></i>GitHub</a></li>
