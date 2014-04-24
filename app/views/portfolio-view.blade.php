@@ -55,8 +55,8 @@
 	<div id="arrows">
 		<div id="arrow-up" class="disabled"></div>
 		<div id="arrow-down"></div>
-		<div id="arrow-left" class="disabled visible-lg"></div>
-		<div id="arrow-right" class="disabled visible-lg"></div>
+		<div id="arrow-left" class="visible-lg"></div>
+		<div id="arrow-right" class="visible-lg"></div>
 	</div><!-- /.arrows -->
 	
 	
@@ -196,11 +196,11 @@
 			</div><!-- /row -->
 			<div class="row content-row">
 				<div class="col-1 col-sm-1 hidden-sm">&nbsp;</div>
-				<div class="col-12 col-sm-2"><img src="Munter/Theme/images/client01.png" alt=""></div>
-				<div class="col-12 col-sm-2"><img src="Munter/Theme/images/client02.png" alt=""></div>
-				<div class="col-12 col-sm-2"><img src="Munter/Theme/images/client03.png" alt=""></div>
-				<div class="col-12 col-sm-2"><img src="Munter/Theme/images/client04.png" alt=""></div>
-				<div class="col-12 col-sm-2"><img src="Munter/Theme/images/client05.png" alt=""></div>
+				<div class="col-12 col-sm-2"><img src="/Munter/Theme/images/client01.png" alt=""></div>
+				<div class="col-12 col-sm-2"><img src="/Munter/Theme/images/client02.png" alt=""></div>
+				<div class="col-12 col-sm-2"><img src="/Munter/Theme/images/client03.png" alt=""></div>
+				<div class="col-12 col-sm-2"><img src="/Munter/Theme/images/client04.png" alt=""></div>
+				<div class="col-12 col-sm-2"><img src="/Munter/Theme/images/client05.png" alt=""></div>
 				<div class="col-1 col-sm-1 hidden-sm">&nbsp;</div>
 			</div><!-- /row -->
 		</div><!-- /container -->
