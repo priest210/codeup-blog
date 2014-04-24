@@ -11,14 +11,14 @@
 
 	<link rel="stylesheet" type="text/css" href="/Munter/Theme/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/Munter/Theme/fancybox/jquery.fancybox-v=2.1.5.css" type="text/css" media="screen">
-    <link rel="stylesheet" href="css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/Munter/Theme/css/font-awesome.min.css" rel="stylesheet">
 	
 	<link rel="stylesheet" type="text/css" href="/Munter/Theme/css/style.css">	
 	
 	<link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,600,300,200&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 	
 	
-	<link rel="prefetch" href="images/zoom.png">
+	<link rel="prefetch" href="/Munter/Theme/images/zoom.png">
 		
 </head>
 
@@ -66,7 +66,7 @@
 			<div id="home-row-1" class="row clearfix">
 				<div class="col-12">
 					<h1 class="font-semibold">Ken Priest<span class="font-thin">Web Developer</span></h1>
-					<h4 class="font-thin">I am an<span class="font-semibold">Independent interactive developer</span> based in San Antonio, TX.</h4>
+					<h4 class="font-thin">I am an <span class="font-semibold">Independent interactive developer</span> based in San Antonio, TX.</h4>
 					<br>
 					<br>
 				</div><!-- /col-12 -->
@@ -196,11 +196,11 @@
 			</div><!-- /row -->
 			<div class="row content-row">
 				<div class="col-1 col-sm-1 hidden-sm">&nbsp;</div>
-				<div class="col-12 col-sm-2"><img src="images/client01.png" alt=""></div>
-				<div class="col-12 col-sm-2"><img src="images/client02.png" alt=""></div>
-				<div class="col-12 col-sm-2"><img src="images/client03.png" alt=""></div>
-				<div class="col-12 col-sm-2"><img src="images/client04.png" alt=""></div>
-				<div class="col-12 col-sm-2"><img src="images/client05.png" alt=""></div>
+				<div class="col-12 col-sm-2"><img src="/Munter/Theme/images/client01.png" alt=""></div>
+				<div class="col-12 col-sm-2"><img src="/Munter/Theme/images/client02.png" alt=""></div>
+				<div class="col-12 col-sm-2"><img src="/Munter/Theme/images/client03.png" alt=""></div>
+				<div class="col-12 col-sm-2"><img src="/Munter/Theme/images/client04.png" alt=""></div>
+				<div class="col-12 col-sm-2"><img src="/Munter/Theme/images/client05.png" alt=""></div>
 				<div class="col-1 col-sm-1 hidden-sm">&nbsp;</div>
 			</div><!-- /row -->
 		</div><!-- /container -->
