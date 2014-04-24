@@ -9,8 +9,8 @@
 	<meta name="keywords" content="Web Developer, Lamp Stack, PHP, MySqL, JavaScript, HTML, CSS, Bootstrap">
 	<meta property="og:title" content="">
 
-	<link rel="stylesheet" type="text/css" href="munter/css/bootstrap.min.css">
-	<link rel="stylesheet" href="munter/fancybox/jquery.fancybox-v=2.1.5.css" type="text/css" media="screen">
+	<link rel="stylesheet" type="text/css" href="/Munter/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/Munter/fancybox/jquery.fancybox-v=2.1.5.css" type="text/css" media="screen">
     <link rel="stylesheet" href="css/font-awesome.min.css" rel="stylesheet">
 	
 	<link rel="stylesheet" type="text/css" href="css/style.css">	
@@ -250,13 +250,13 @@
 </body>
 
 	<!-- SCRIPTS -->
-	<script src="Munter/js/html5shiv.js"></script>
-	<script src="Munter/js/jquery-1.10.2.min.js"></script>
-	<script src="Munter/js/jquery-migrate-1.2.1.min.js"></script>
-	<script src="Munter/js/bootstrap.min.js"></script>
-	<script src="Munter/js/jquery.easing.1.3.js"></script>
+	<script src="/Munter/js/html5shiv.js"></script>
+	<script src="/Munter/js/jquery-1.10.2.min.js"></script>
+	<script src="/Munter/js/jquery-migrate-1.2.1.min.js"></script>
+	<script src="/Munter/js/bootstrap.min.js"></script>
+	<script src="/Munter/js/jquery.easing.1.3.js"></script>
 	<script type="text/javascript" src="Munter/fancybox/jquery.fancybox.pack-v=2.1.5.js"></script>
-	<script src="js/script.js"></script>
+	<script src="/Munter/js/script.js"></script>
 	
 	<!-- fancybox init -->
 	<script>
