@@ -6,7 +6,7 @@
 	
 	<title>Ken Priest - Web Developer Portfolio</title> 
 	<meta name="description" content="BlackTie.co - Free Handsome Bootstrap Themes" />	    
-	<meta name="keywords" content="themes, bootstrap, free, templates, bootstrap 3, freebie,">
+	<meta name="keywords" content="Web Developer, Lamp Stack, PHP, MySqL, JavaScript, HTML, CSS, Bootstrap">
 	<meta property="og:title" content="">
 
 	<link rel="stylesheet" type="text/css" href="munter/css/bootstrap.min.css">
@@ -250,12 +250,12 @@
 </body>
 
 	<!-- SCRIPTS -->
-	<script src="js/html5shiv.js"></script>
-	<script src="js/jquery-1.10.2.min.js"></script>
-	<script src="js/jquery-migrate-1.2.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.easing.1.3.js"></script>
-	<script type="text/javascript" src="fancybox/jquery.fancybox.pack-v=2.1.5.js"></script>
+	<script src="Munter/js/html5shiv.js"></script>
+	<script src="Munter/js/jquery-1.10.2.min.js"></script>
+	<script src="Munter/js/jquery-migrate-1.2.1.min.js"></script>
+	<script src="Munter/js/bootstrap.min.js"></script>
+	<script src="Munter/js/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="Munter/fancybox/jquery.fancybox.pack-v=2.1.5.js"></script>
 	<script src="js/script.js"></script>
 	
 	<!-- fancybox init -->
