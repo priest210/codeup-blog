@@ -13,7 +13,7 @@
 	<link rel="stylesheet" href="/Munter/fancybox/jquery.fancybox-v=2.1.5.css" type="text/css" media="screen">
     <link rel="stylesheet" href="css/font-awesome.min.css" rel="stylesheet">
 	
-	<link rel="stylesheet" type="text/css" href="css/style.css">	
+	<link rel="stylesheet" type="text/css" href="/Munter/css/style.css">	
 	
 	<link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,600,300,200&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 	
@@ -66,7 +66,7 @@
 			<div id="home-row-1" class="row clearfix">
 				<div class="col-12">
 					<h1 class="font-semibold">Ken Priest<span class="font-thin">Web Developer</span></h1>
-					<h4 class="font-thin">We are an <span class="font-semibold">independent interactive agency</span> based in London.</h4>
+					<h4 class="font-thin">I am an<span class="font-semibold">Independent interactive developer</span> based in San Antonio, TX.</h4>
 					<br>
 					<br>
 				</div><!-- /col-12 -->
@@ -210,7 +210,7 @@
 	<div class="slide story" id="slide-6" data-slide="6">
 		<div class="container">
 			<div class="row title-row">
-				<div class="col-12 font-light">Leave us a <span class="font-semibold">message</span></div>
+				<div class="col-12 font-light">Leave me a <span class="font-semibold">message</span></div>
 			</div><!-- /row -->
 			<div class="row line-row">
 				<div class="hr">&nbsp;</div>
@@ -224,23 +224,23 @@
 				<div class="col-sm-1 hidden-sm">&nbsp;</div>
 				<div class="col-12 col-sm-2 with-hover-text">
 					<p><a target="_blank" href="#"><i class="icon icon-phone"></i></a></p>
-					<span class="hover-text font-light ">+44 4839-4343</span></a>
+					<span class="hover-text font-light ">210.557.9865</span></a>
 				</div><!-- /col12 -->
 				<div class="col-12 col-sm-2 with-hover-text">
 					<p><a target="_blank" href="#"><i class="icon icon-envelope"></i></a></p>
-					<span class="hover-text font-light ">munter@blacktie.co</span></a>
+					<span class="hover-text font-light ">ken@priest210.com</span></a>
 				</div><!-- /col12 -->
 				<div class="col-12 col-sm-2 with-hover-text">
 					<p><a target="_blank" href="#"><i class="icon icon-home"></i></a></p>
-					<span class="hover-text font-light ">London, England<br>zip code 98443</span></a>
+					<span class="hover-text font-light ">San Antonio, TX</span></a>
 				</div><!-- /col12 -->
 				<div class="col-12 col-sm-2 with-hover-text">
-					<p><a target="_blank" href="#"><i class="icon icon-facebook"></i></a></p>
-					<span class="hover-text font-light ">facebook/blacktie_co</span></a>
+					<p><a target="_blank" href="#"><i class="icon icon-linkedin"></i></a></p>
+					<span class="hover-text font-light ">www.linkedin.com/in/kenpriest/</span></a>
 				</div><!-- /col12 -->
 				<div class="col-12 col-sm-2 with-hover-text">
 					<p><a target="_blank" href="#"><i class="icon icon-twitter"></i></a></p>
-					<span class="hover-text font-light ">@BlackTie_co</span></a>
+					<span class="hover-text font-light ">@KenLife</span></a>
 				</div><!-- /col12 -->
 				<div class="col-sm-1 hidden-sm">&nbsp;</div>
 			</div><!-- /row -->
@@ -255,7 +255,7 @@
 	<script src="/Munter/js/jquery-migrate-1.2.1.min.js"></script>
 	<script src="/Munter/js/bootstrap.min.js"></script>
 	<script src="/Munter/js/jquery.easing.1.3.js"></script>
-	<script type="text/javascript" src="Munter/fancybox/jquery.fancybox.pack-v=2.1.5.js"></script>
+	<script type="text/javascript" src="/Munter/fancybox/jquery.fancybox.pack-v=2.1.5.js"></script>
 	<script src="/Munter/js/script.js"></script>
 	
 	<!-- fancybox init -->
