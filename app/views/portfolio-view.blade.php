@@ -65,6 +65,7 @@
 		<div class="container">
 			<div id="home-row-1" class="row clearfix">
 				<div class="col-12">
+					
 					<h1 class="font-semibold">Ken Priest<span id="letter-color" class="font-thin">Web Developer</span></h1>
 					<h4 class="font-thin">I am an <span class="font-semibold">Independent interactive developer</span> based in San Antonio, TX.</h4>
 					<br>
