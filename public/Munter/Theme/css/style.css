@@ -232,6 +232,10 @@ body {
 	background-position: center center;
 }
 
+#letter-color {
+	color: #cd2027;
+}
+
 #pro-traits {
 	color: #0ee6f2;
 }
