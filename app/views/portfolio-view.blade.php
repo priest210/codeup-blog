@@ -73,9 +73,9 @@
 				</div><!-- /col-12 -->
 			</div><!-- /row -->
 			<div id="home-row-2" class="row clearfix">
-				<div id="pro-traits" class="col-12 col-sm-4"><div class="home-hover navigation-slide" data-slide="4"><img src="/Munter/Theme/images/s02.png"></div><span>PROFESSIONAL</span></div>
+				<div id="pro-traits" class="col-12 col-sm-4"><div class="home-hover navigation-slide" data-slide="2"><img src="/Munter/Theme/images/s02.png"></div><span>PROFESSIONAL</span></div>
 				<div id="pro-traits" class="col-12 col-sm-4"><div class="home-hover navigation-slide" data-slide="3"><img src="/Munter/Theme/images/s01.png"></div><span>FRIENDLY</span></div>
-				<div id="pro-traits" class="col-12 col-sm-4"><div class="home-hover navigation-slide" data-slide="5"><img src="/Munter/Theme/images/s03.png"></div><span>SUITABLE</span></div>
+				<div id="pro-traits" class="col-12 col-sm-4"><div class="home-hover navigation-slide" data-slide="4"><img src="/Munter/Theme/images/s03.png"></div><span>SMART DESIGN</span></div>
 			</div><!-- /row -->
 		</div><!-- /container -->
 	</div><!-- /slide1 -->
@@ -90,13 +90,13 @@
 				<div class="hr">&nbsp;</div>
 			</div><!-- /row -->
 			<div class="row subtitle-row">
-				<div class="col-12 font-thin">This is what <span class="font-semibold">we do best</span></div>
+				<div class="col-12 font-thin">This is what <span class="font-semibold">we do</span></div>
 			</div><!-- /row -->
 			<div class="row content-row">
 				<div class="col-12 col-lg-3 col-sm-6">
 					<p><i class="icon icon-eye-open"></i></p>
 					<h2 class="font-thin">Visual <span class="font-semibold">Identity</span></h2>
-					<h4 class="font-thin">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h4>
+					<h4 class="font-thin">Visible elements of a brand, such as color, form, and shape, which encapsulate and convey the symbolic meanings that cannot be imparted through words alone.</h4>
 				</div><!-- /col12 -->
 				<div class="col-12 col-lg-3 col-sm-6">
 					<p><i class="icon icon-laptop"></i></p>
@@ -219,7 +219,7 @@
 					<span class="hover-text font-light ">210.557.9865</span></a>
 				</div><!-- /col12 -->
 				<div class="col-12 col-sm-2 with-hover-text">
-					<p><a target="_blank" href="#"><i class="icon icon-envelope"></i></a></p>
+					<p><a href="mailto:ken@priest210.com"><i class="icon icon-envelope"></i></a></p>
 					<span class="hover-text font-light ">ken@priest210.com</span></a>
 				</div><!-- /col12 -->
 				<div class="col-12 col-sm-2 with-hover-text">
