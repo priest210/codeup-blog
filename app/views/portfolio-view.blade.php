@@ -148,18 +148,18 @@
 					<h4 class="font-thin">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</h4>
 				</div><!-- /col12 -->
 				<div class="col-12 col-sm-2">
-					<p><i class="icon icon-cog"></i></p>
-					<h2 class="font-thin">Project<br><span class="font-semibold">discovery</span></h2>
-					<h4 class="font-thin">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</h4>
-				</div><!-- /col12 -->
-				<div class="col-12 col-sm-2">
 					<p><i class="icon icon-cloud"></i></p>
 					<h2 class="font-thin">Storming<br><span class="font-semibold">our brains</span></h2>
 					<h4 class="font-thin">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</h4>
 				</div><!-- /col12 -->
 				<div class="col-12 col-sm-2">
-					<p><i class="icon icon-map-marker"></i></p>
-					<h2 class="font-thin">Getting<br><span class="font-semibold">there</span></h2>
+					<p><i class="icon icon-cog"></i></p>
+					<h2 class="font-thin">Project<br><span class="font-semibold">planning</span></h2>
+					<h4 class="font-thin">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</h4>
+				</div><!-- /col12 -->
+				<div class="col-12 col-sm-2">
+					<p><i class="icon icon-bullhorn"></i></p>
+					<h2 class="font-thin">Talking<br><span class="font-semibold">as we go</span></h2>
 					<h4 class="font-thin">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</h4>
 				</div><!-- /col12 -->
 				<div class="col-12 col-sm-2">
@@ -202,7 +202,7 @@
 	<div class="slide story" id="slide-6" data-slide="6">
 		<div class="container">
 			<div class="row title-row">
-				<div class="col-12 font-light">Leave me a <span class="font-semibold">message</span></div>
+				<div class="col-12 font-light">Reach out <span class="font-semibold">to me</span></div>
 			</div><!-- /row -->
 			<div class="row line-row">
 				<div class="hr">&nbsp;</div>
