@@ -67,7 +67,7 @@
 				<div class="col-12">
 
 					<h1 class="font-semibold">Ken Priest<span id="letter-color" class="font-thin">Web Developer</span></h1>
-					<h4 class="font-thin">I am a <span class="font-semibold">Freelance Developer</span id="letter-color"> based in San Antonio, TX.</h4>
+					<h4 class="font-thin">I am a <span class="font-semibold">Freelance Developer</span><span  id="letter-color" class="font-semibold">based in San Antonio, TX.</span></h4>
 					<br>
 					<br>
 				</div><!-- /col-12 -->
