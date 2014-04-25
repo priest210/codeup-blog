@@ -228,7 +228,7 @@
 				</div><!-- /col12 -->
 				<div class="col-12 col-sm-2 with-hover-text">
 					<p><a target="_blank" href="http://www.linkedin.com/in/kenpriest/"><i class="icon icon-linkedin"></i></a></p>
-					<span class="hover-text font-light "></span></a>
+					<span class="hover-text font-light ">Linkedin</span></a>
 				</div><!-- /col12 -->
 				<div class="col-12 col-sm-2 with-hover-text">
 					<p><a target="_blank" href="http://twitter.com/KenzLife"><i class="icon icon-twitter"></i></a></p>
