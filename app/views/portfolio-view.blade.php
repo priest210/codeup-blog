@@ -219,12 +219,12 @@
 					<span class="hover-text font-light ">210.557.9865</span></a>
 				</div><!-- /col12 -->
 				<div class="col-12 col-sm-2 with-hover-text">
-					<p><a href="mailto:ken@priest210.com"><i class="icon icon-envelope"></i></a></p>
+					<p><a target="_blank" href="mailto:ken@priest210.com"><i class="icon icon-envelope"></i></a></p>
 					<span class="hover-text font-light ">ken@priest210.com</span></a>
 				</div><!-- /col12 -->
 				<div class="col-12 col-sm-2 with-hover-text">
-					<p><a target="_blank" href="#"><i class="icon icon-home"></i></a></p>
-					<span class="hover-text font-light ">San Antonio, TX</span></a>
+					<p><a target="_blank" href="{{{ action('HomeController@showResume') }}}" ><i class="icon icon-briefcase"></i></a></p>
+					<span class="hover-text font-light ">Resume</span></a>
 				</div><!-- /col12 -->
 				<div class="col-12 col-sm-2 with-hover-text">
 					<p><a target="_blank" href="http://www.linkedin.com/in/kenpriest/"><i class="icon icon-linkedin"></i></a></p>
