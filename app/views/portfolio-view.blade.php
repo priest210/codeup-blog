@@ -72,9 +72,9 @@
 				</div><!-- /col-12 -->
 			</div><!-- /row -->
 			<div id="home-row-2" class="row clearfix">
-				<div class="col-12 col-sm-4"><div class="home-hover navigation-slide" data-slide="4"><img src="/Munter/Theme/images/s02.png"></div><span>PROFESSIONAL</span></div>
-				<div class="col-12 col-sm-4"><div class="home-hover navigation-slide" data-slide="3"><img src="/Munter/Theme/images/s01.png"></div><span>FRIENDLY</span></div>
-				<div class="col-12 col-sm-4"><div class="home-hover navigation-slide" data-slide="5"><img src="/Munter/Theme/images/s03.png"></div><span>SUITABLE</span></div>
+				<div id="pro-traits" class="col-12 col-sm-4"><div class="home-hover navigation-slide" data-slide="4"><img src="/Munter/Theme/images/s02.png"></div><span>PROFESSIONAL</span></div>
+				<div id="pro-traits" class="col-12 col-sm-4"><div class="home-hover navigation-slide" data-slide="3"><img src="/Munter/Theme/images/s01.png"></div><span>FRIENDLY</span></div>
+				<div id="pro-traits" class="col-12 col-sm-4"><div class="home-hover navigation-slide" data-slide="5"><img src="/Munter/Theme/images/s03.png"></div><span>SUITABLE</span></div>
 			</div><!-- /row -->
 		</div><!-- /container -->
 	</div><!-- /slide1 -->
