@@ -66,8 +66,8 @@
 			<div id="home-row-1" class="row clearfix">
 				<div class="col-12">
 
-					<h1 class="font-semibold">Ken Priest<span id="letter-color" class="font-thin">Web Developer</span></h1>
-					<h4 class="font-thin">I am a <span class="font-semibold">Freelance Developer </span><span  id="letter-color" class="font-semibold">based in San Antonio, TX.</span></h4>
+					<h1 class="font-semibold">Ken Priest | <span id="letter-color" class="font-thin">Web Developer</span></h1>
+					<h4 <span class="font-semibold">I am a Freelance Developer | </span><span  id="letter-color" class="font-semibold">based in San Antonio, TX.</span></h4>
 					<br>
 					<br>
 				</div><!-- /col-12 -->
@@ -209,7 +209,7 @@
 			</div><!-- /row -->
 			<div class="row subtitle-row">
 				<div class="col-sm-1 hidden-sm">&nbsp;</div>
-				<div class="col-12 col-sm-10 font-light">You can find me literally anywhere, just push a button and I am there</div>
+				<div class="col-12 col-sm-10 font-light">Call me, Mail me, or Stalk me - Choose your preferred method below!</div>
 				<div class="col-sm-1 hidden-sm">&nbsp;</div>
 			</div><!-- /row -->
 			<div id="contact-row-4" class="row">
