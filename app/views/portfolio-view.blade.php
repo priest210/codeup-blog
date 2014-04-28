@@ -130,14 +130,18 @@
 	<div class="slide story" id="slide-4" data-slide="4">
 		<div class="container">
 			<div class="row title-row">
-				<div class="col-12 font-thin">How I like <span class="font-semibold">to work</span></div>
+				<div class="col-12 font-thin">It's a <span class="font-semibold">Partnership</span></div>
 			</div><!-- /row -->
 			<div class="row line-row">
 				<div class="hr">&nbsp;</div>
 			</div><!-- /row -->
 			<div class="row subtitle-row">
 				<div class="col-sm-1 hidden-sm">&nbsp;</div>
-				<div class="col-12 col-sm-10 font-light">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</div>
+				<div class="col-12 col-sm-10 font-light">
+					When working with a client I like to sit down and talk about what message they want to send to their audience.
+					Whether it's a written or visual message, a website needs to feel like an extension of its owner's personality, because it is speaking for you even 
+					when you are not speaking for yourself.
+				</div>
 				<div class="col-sm-1 hidden-sm">&nbsp;</div>
 			</div><!-- /row -->
 			<div class="row content-row">
@@ -145,27 +149,27 @@
 				<div class="col-12 col-sm-2">
 					<p><i class="icon icon-bolt"></i></p>
 					<h2 class="font-thin">Listening to<br><span class="font-semibold" >your needs</span></h2>
-					<h4 class="font-thin">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</h4>
+					<h4 class="font-thin">I like coffee,  so lets sit down have a cup or six and talk about your vision.</h4>
 				</div><!-- /col12 -->
 				<div class="col-12 col-sm-2">
 					<p><i class="icon icon-cloud"></i></p>
 					<h2 class="font-thin">Storming<br><span class="font-semibold">our brains</span></h2>
-					<h4 class="font-thin">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</h4>
+					<h4 class="font-thin">Talking, whiteboarding, sketching, more talking and scribbling.  We will find the perfect solution.</h4>
 				</div><!-- /col12 -->
 				<div class="col-12 col-sm-2">
 					<p><i class="icon icon-cog"></i></p>
 					<h2 class="font-thin">Project<br><span class="font-semibold">planning</span></h2>
-					<h4 class="font-thin">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</h4>
+					<h4 class="font-thin">Now that we have a concept let's map out a plan for implementation.</h4>
 				</div><!-- /col12 -->
 				<div class="col-12 col-sm-2">
 					<p><i class="icon icon-bullhorn"></i></p>
 					<h2 class="font-thin">Talking<br><span class="font-semibold">as we go</span></h2>
-					<h4 class="font-thin">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</h4>
+					<h4 class="font-thin">I believe in constant communication.  Instant feedback is the best feedback.  Keeps everyone on the right track.</h4>
 				</div><!-- /col12 -->
 				<div class="col-12 col-sm-2">
 					<p><i class="icon icon-gift"></i></p>
 					<h2 class="font-thin">Delivering<br><span class="font-semibold">the product</span></h2>
-					<h4 class="font-thin">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</h4>
+					<h4 class="font-thin">Delivering a product that reflects your organization's identity and my craftsmanship.</h4>
 				</div><!-- /col12 -->
 				<div class="col-sm-1 hidden-sm">&nbsp;</div>
 			</div><!-- /row -->
