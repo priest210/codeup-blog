@@ -138,7 +138,7 @@
 			<div class="row subtitle-row">
 				<div class="col-sm-1 hidden-sm">&nbsp;</div>
 				<div class="col-12 col-sm-10 font-light">
-					When working with a client I like to sit down and talk about what message they want to send to their audience.
+					When working with a client I like to sit down and talk about what message they want to send to their customers.
 					Whether it's a written or visual message, a website needs to feel like an extension of its owner's personality, because it is speaking for you even 
 					when you are not speaking for yourself.
 				</div>
