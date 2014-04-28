@@ -84,7 +84,7 @@
 	<div class="slide story" id="slide-2" data-slide="2">
 		<div class="container">
 			<div class="row title-row">
-				<div class="col-12 font-thin">Contrary to popular belief, <span class="font-semibold">Lorem Ipsum</span> is not simply random text.</div>
+				<div class="col-12 font-thin">Focusing on <span class="font-semibold">the customer's</span> needs.</div>
 			</div><!-- /row -->
 			<div class="row line-row">
 				<div class="hr">&nbsp;</div>
@@ -96,22 +96,22 @@
 				<div class="col-12 col-lg-3 col-sm-6">
 					<p><i class="icon icon-eye-open"></i></p>
 					<h2 class="font-thin">Visual <span class="font-semibold">Identity</span></h2>
-					<h4 class="font-thin">Visible elements of a brand, such as color, form, and shape, which encapsulate and convey the symbolic meanings that cannot be imparted through words alone.</h4>
+					<h4 class="font-thin">Enhancing your organization's physical identity by establishing a digital presence that focuses on simple, clean and functional design elements.</h4>
 				</div><!-- /col12 -->
 				<div class="col-12 col-lg-3 col-sm-6">
 					<p><i class="icon icon-laptop"></i></p>
 					<h2 class="font-thin">Web <span class="font-semibold">Design</span></h2>
-					<h4 class="font-thin">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h4>
+					<h4 class="font-thin">Front-end web design that reflects your organization's culture and personality.</h4>
 				</div><!-- /col12 -->
 				<div class="col-12 col-lg-3 col-sm-6">
 					<p><i class="icon icon-tablet"></i></p>
 					<h2 class="font-thin">Mobile <span class="font-semibold">Apps</span></h2>
-					<h4 class="font-thin">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h4>
+					<h4 class="font-thin">Take your web application mobile.</h4>
 				</div><!-- /col12 -->
 				<div class="col-12 col-lg-3 col-sm-6">
 					<p><i class="icon icon-pencil"></i></p>
 					<h2 class="font-semibold">Development</h2>
-					<h4 class="font-thin">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h4>
+					<h4 class="font-thin">If you need your site to do more than just look awesome, I can develop back-end applications to fit any need.</h4>
 				</div><!-- /col12 -->
 			</div><!-- /row -->
 		</div><!-- /container -->
@@ -130,7 +130,7 @@
 	<div class="slide story" id="slide-4" data-slide="4">
 		<div class="container">
 			<div class="row title-row">
-				<div class="col-12 font-thin">See us <span class="font-semibold">at work</span></div>
+				<div class="col-12 font-thin">How I like <span class="font-semibold">to work</span></div>
 			</div><!-- /row -->
 			<div class="row line-row">
 				<div class="hr">&nbsp;</div>
