@@ -40,7 +40,7 @@
 					<li data-slide="2" class="col-12 col-sm-2"><a id="menu-link-2" href="#slide-2" title="Next Section"><span class="icon icon-user"></span> <span class="text">ABOUT</span></a></li>
 					<li data-slide="3" class="col-12 col-sm-2"><a id="menu-link-3" href="#slide-3" title="Next Section"><span class="icon icon-briefcase"></span> <span class="text">PORTFOLIO</span></a></li>
 					<li data-slide="4" class="col-12 col-sm-2"><a id="menu-link-4" href="#slide-4" title="Next Section"><span class="icon icon-gears"></span> <span class="text">PROCESS</span></a></li>
-					<li data-slide="5" class="col-12 col-sm-2"><a id="menu-link-5" href="#slide-5" title="Next Section"><span class="icon icon-heart"></span> <span class="text">CLIENTS</span></a></li>
+					<li data-slide="5" class="col-12 col-sm-2"><a id="menu-link-5" href="#slide-5" title="Next Section"><span class="icon icon-heart"></span> <span class="text"></span></a></li>
 					<li data-slide="6" class="col-12 col-sm-2"><a id="menu-link-6" href="#slide-6" title="Next Section"><span class="icon icon-envelope"></span> <span class="text">CONTACT</span></a></li>
 				</ul>
 				<div class="row">
@@ -180,23 +180,23 @@
 	<div class="slide story" id="slide-5" data-slide="5">
 		<div class="container">
 			<div class="row title-row">
-				<div class="col-12 font-thin"><span class="font-semibold">Clients</span> we’ve worked with</div>
+				<div class="col-12 font-thin"><span class="font-semibold"></span></div>
 			</div><!-- /row -->
 			<div class="row line-row">
 				<div class="hr">&nbsp;</div>
 			</div><!-- /row -->
 			<div class="row subtitle-row">
 				<div class="col-sm-1 hidden-sm">&nbsp;</div>
-				<div class="col-12 col-sm-10 font-light">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. <br/><br/> The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero.</div>
+				<div class="col-12 col-sm-10 font-light"><br/><br/> </div>
 				<div class="col-sm-1 hidden-sm">&nbsp;</div>
 			</div><!-- /row -->
 			<div class="row content-row">
 				<div class="col-1 col-sm-1 hidden-sm">&nbsp;</div>
-				<div class="col-12 col-sm-2"><img src="/Munter/Theme/images/XXXXXXX" alt=""></div>
-				<div class="col-12 col-sm-2"><img src="/Munter/Theme/images/XXXXXX" alt=""></div>
-				<div class="col-12 col-sm-2"><img src="/Munter/Theme/images/XXXXXX" alt=""></div>
-				<div class="col-12 col-sm-2"><img src="/Munter/Theme/images/XXXXXXX" alt=""></div>
-				<div class="col-12 col-sm-2"><img src="/Munter/Theme/images/XXXXXXX" alt=""></div>
+				<div class="col-12 col-sm-2"><img src="" alt=""></div>
+				<div class="col-12 col-sm-2"><img src="" alt=""></div>
+				<div class="col-12 col-sm-2"><img src="" alt=""></div>
+				<div class="col-12 col-sm-2"><img src="" alt=""></div>
+				<div class="col-12 col-sm-2"><img src="" alt=""></div>
 				<div class="col-1 col-sm-1 hidden-sm">&nbsp;</div>
 			</div><!-- /row -->
 		</div><!-- /container -->
